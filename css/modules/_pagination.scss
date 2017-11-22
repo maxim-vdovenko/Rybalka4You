@@ -1,0 +1,71 @@
+/* .pagination ----------------------------------------------------------------------*/
+.pagination{
+     @include block(center);
+     height: 60px;
+     padding: 0px 60px;
+     margin: 50px 0px 50px 0px;
+     border: 2px solid #e5e5e5;
+     @include transition($timeCatalog, all);
+       
+     &__prev, &__next {
+          position: absolute;
+          top: 0px;
+          width: 60px;
+          height: 100%;
+          
+          &:hover {
+               background-color: #f7f7f7;
+          }
+     }
+     &__prev {
+          left: 0px;
+          @include shadow(-2px, 0px, 0px, 0px, #f7f7f7, inset);
+          @include background('pagination-prev.svg', center);
+     }
+     &__next {
+          right: 0px;
+          @include shadow(2px, 0px, 0px, 0px, #f7f7f7, inset);
+          @include background('pagination-next.svg', center);
+     }
+     
+     &__list {
+          @include inline_block();
+          height: 100%;
+          @include shadow(2px, 0px, 0px, 0px, #f7f7f7, inset);
+          
+          
+          
+          li {
+               @include inline_block();
+               float: left;
+               height: 100%;
+               @include shadow(-2px, 0px, 0px, 0px, #f7f7f7, inset);
+               
+               &.active a, &.active span{
+                    background-color: #f7f7f7;
+               }
+          }
+          a, span {
+               @include inline_block(top, center);
+               min-width: 60px;
+               height: 100%;
+               padding: 20px 10px 0px 10px;
+               @include transition($time, background-color);
+               @include fonts(15px, 18px, $gothamPro_medium);
+               color: #3C3D41;
+               text-decoration: none;
+               
+          }
+          a:hover {
+               background-color: #f7f7f7;
+          }    
+     }
+} 
+
+
+
+
+
+
+
+

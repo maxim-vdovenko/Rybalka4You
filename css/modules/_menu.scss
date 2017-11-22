@@ -1,0 +1,868 @@
+/* .menu ----------------------------------------------------------------------------*/
+.menu{
+     @include block(); 
+     background-color: $color_panel;
+     z-index: 5;
+}
+
+.menuBox{
+     @include table();
+     
+     &__cont {
+          display: table-cell;
+          vertical-align: top;
+          height: $menu_height;
+           
+          &:nth-child(1) {
+               width: 72 / ($minPage / 100%);
+               @include border_horizontal();
+          }
+          &:nth-child(2) {
+               width: 640 / ($minPage / 100%);
+          }
+          &:nth-child(3) {
+               width: 207 / ($minPage / 100%);
+               @include border_horizontal_left();
+          }
+          &:nth-child(4) {
+               width: 144 / ($minPage / 100%);
+               @include border_horizontal_left();
+          }
+          &:nth-child(5) {
+               width: 77 / ($minPage / 100%);
+               @include border_horizontal();
+          }
+     }
+}
+
+
+
+/* .menu-list -----------------------*/ 
+.menu-list{
+     @include position(absolute, 0px, $menu_height - 2, auto, auto);
+     display: none;
+     border: $menu_popUp_border;
+     background-color: $menu_popUp_color;
+
+     ul {
+          @include block(); 
+          padding: 25px 30px 25px 30px;
+     }
+     li {
+          @include block(); 
+          margin: 18px 0px;
+
+          &.active a{
+               color: $menu_color_active;
+          }
+
+          &:first-child{
+               margin-top: 0px;
+          }
+          &:last-child{
+               margin-bottom: 0px;
+          }
+     }
+     a {
+          @include inline_block();
+          font-family: $haginCapsMedium_Regular;
+          font-size: 14px;
+          color: $menu_color;
+          text-decoration: none;
+          @include transition($time, color);
+
+          &:hover {
+               color: $menu_color_active;
+          }
+     }
+}
+
+
+
+/* .menuHome ------------------------*/ 
+.menuHome{
+     @include block();
+     height: inherit;
+     
+     &__title {
+          @include position(absolute, 0px, 0px, 100%, 100%);
+          padding-top: 30px;
+          cursor: pointer;
+          @include transition($time, all);
+          z-index: 1;
+
+          span {
+               @include block();
+               width: 16px;
+               height: 3px;
+               margin: 2px auto;
+               background-color: $color;
+               @include radius(1000px);
+          }
+          &.active {
+               @include border_active(); 
+          }
+     }
+     
+     &__cont {
+          @extend .menu-list;
+          width: 228px;
+     }
+}
+
+
+
+/* .logo ----------------------------*/ 
+.logo{
+     @include table_cell();
+     height: inherit;
+     
+     a {
+          @include table_cell(middle);
+          height: inherit;
+          padding: 0px 20px 3px 25px;
+          text-decoration: none;
+     }
+     img {
+          @include inline_block();
+     }
+}
+
+
+
+/* .menuUpper -----------------------*/ 
+.menuUpper{
+     display: table-cell;
+     height: inherit;
+     
+     > ul {
+          display: table;
+          width: 100%;
+          height: inherit;
+          
+          > li {
+               display: table-cell;
+               height: inherit;
+          }
+          
+          > li > a, > li > span {
+               @include table_cell(middle);
+               height: inherit;
+               padding-top: 8px;
+               font-family: $haginCapsMedium_Regular;
+               cursor: pointer;
+               font-size: 13px;
+               color: $color;
+               text-decoration: none;
+               letter-spacing: $text_spacing;
+               @include transition($time, all);
+               z-index: 1;
+          }
+          
+          > li > a{
+               padding-left: 12px;
+               padding-right: 12px;
+          }
+          > li > span {
+               padding-left: 12px;
+               padding-right: 10px;
+          }
+          
+          > li > span:after {
+               @include inline_block();
+               content: '';
+               width: 8px;
+               height: 4px;
+               margin: 7px 0px 0px 5px;
+               @include background('menu-arrow.svg', center);
+               background-size: contain;
+               @include transition($time, all);
+          }
+          > li > span:before {
+               @include position(absolute, 0px, 0px, 100%, 100%);
+               content: '';
+               @include transition($time, all);
+          }
+          > li > span.active {
+               
+               &:before {
+                    @include border_active(); 
+               }
+               &:after {
+                    @include rotate(180);
+               }
+          }
+     }
+}
+
+.menuUpper-list-a{
+     &:first-child{
+          margin-left: 0px;
+     }
+     a {
+          @include inline_block();
+          font-family: $haginCapsMedium_Regular;
+          font-size: 14px;
+          color: $color;
+          text-decoration: none;
+          letter-spacing: 1px;
+          @include transition($time, color);
+
+          &:hover {
+               color: $menu_color_active;
+          }
+     }
+     &.active a{
+          color: $menu_color_active;
+     } 
+}
+
+.menuUpper-cont{
+     @include position(absolute, 0px, $menu_height - 2, 100%, auto);
+     display: none;
+     border: $menu_popUp_border;
+     background-color: $menu_popUp_color;
+     
+     &__top {
+          @include inline_block();
+          width: 100%;
+          min-height: 66px;
+          padding: 28px $menu_upper_padding 18px $menu_upper_padding;
+          border-bottom: 1px solid $menu_separator;
+          
+          ul {
+               @include inline_block();
+          }
+          li {
+               @include inline_block();
+               margin-left: 50px;
+               @extend .menuUpper-list-a;
+          }
+     }
+     &__center {
+          @include inline_block();
+          width: 100%;
+          padding: 35px 0px 50px 0px;
+          
+          ul {
+               @include block();
+               margin-bottom: 27px;
+               &:last-child{
+                    margin-bottom: 0px;
+               }
+          }
+          li {
+               @include block();
+               margin-bottom: 6px;
+               &.active a {
+                    color: $menu_color_active;
+               }
+               &:last-child{
+                    margin-bottom: 0px;
+               }
+          }
+          a {
+               position: relative;
+               display: inline;
+               font-size: 12px;
+               line-height: 14px;
+               color: #BCBCBC;
+               text-decoration: none;
+               @include transition($time, color);
+               
+               &:hover {
+                    color: $menu_color_active;
+               }
+          }
+     }
+     &__bottom {
+          @include inline_block();
+          width: 100%;
+          min-height: 73px;
+          padding: 32px $menu_upper_padding 20px $menu_upper_padding;
+          border-top: 1px solid $menu_separator;
+          
+          ul {
+               @include inline_block();
+          }
+          li {
+               @include inline_block();
+               margin-left: 40px;
+               @extend .menuUpper-list-a;
+          }
+     }
+}
+
+.menuUpper-list-title{
+     li {
+          @extend .menuUpper-list-a;
+          margin-bottom: 12px;
+     }
+}
+
+.menuUpper-title {
+     @include block();
+     margin-bottom: 11px;
+     font-family: $haginCapsMedium_Regular;
+     font-size: 14px;
+     color: $color;
+     text-decoration: none;
+     letter-spacing: 1px;     
+}
+
+.menuUpper-left{
+     float: left;
+}
+
+.menuUpper-right{
+     float: right;
+     li {
+          margin-left: 20px;
+     }
+}
+
+
+.menuUpper-boxContent{
+     position: relative;
+     display: none;
+     
+     &.active {
+          display: block;
+     }
+} 
+
+.menuUpper-box{
+     @include table_cell();
+     width: 20%;
+     padding-left: 30px;
+     padding-right: 10px;
+     border-left: 1px solid $menu_separator;
+     
+     &:first-child{
+          border-left: none;
+          padding-left: $menu_upper_padding;
+     }
+     &:last-child{
+          
+     }
+}
+
+
+
+/* .search --------------------------*/ 
+.search{
+     @include block();
+     height: inherit;
+     
+     &__title {
+          @include position(absolute, 0px, 0px, 100%, 100%);
+          // padding-top: $menu_padding_top;
+          cursor: pointer;
+          text-align: center;
+          @include transition($time, all);
+          z-index: 1;
+          
+          
+          span {
+               @include inline_block();
+               font-family: $haginCapsMedium_Regular;
+               font-size: 13px;
+               color: $color;
+               letter-spacing: $text_spacing;
+               
+               &:before {
+                    @include inline_block();
+                    width: 15px;
+                    height: 15px;
+                    margin-right: 12px;
+                    @include background('search.svg');
+                    content: '';
+               }
+          }
+          input {
+               @include inline_block();
+               width: 100%;
+               height: 100%;
+               padding: 7px 10px 0px 50px;
+               font-family: $haginCapsMedium_Regular;
+               font-size: 13px;
+               color: $color;
+               letter-spacing: $text_spacing;
+               
+               @include background('search.svg', 23px 34px);
+               background-color: transparent;
+               border: none;
+          }
+          
+          &.active {
+               @include border_active_left(); 
+          }
+               
+     }
+     &__cont {
+          @extend .menu-list;
+          width: 280px;
+     }
+}
+
+
+
+/* .cart ----------------------------*/ 
+.cart{
+     @include block();
+     height: inherit;
+     
+     &__title {
+          @include position(absolute, 0px, 0px, 100%, 100%);
+          padding-top: $menu_padding_top - 1px;
+          cursor: pointer;
+          text-align: center;
+          @include transition($time, all);
+          z-index: 1;
+          
+          span {
+               @include inline_block();
+               font-family: $haginCapsMedium_Regular;
+               font-size: 13px;
+               color: $color;
+               letter-spacing: $text_spacing;
+               
+               &:before {
+                    @include inline_block();
+                    width: 16px;
+                    height: 15px;
+                    top: 1px;
+                    margin-right: 12px;
+                    @include background('cart.svg');
+                    content: '';
+               }
+          }
+          b {
+               @include position(absolute, auto, -19px, auto, 17px);
+               // opacity: 0;
+               right: -18px;
+               min-width: 17px;
+               padding: 0px 2px 0px 3px;
+               border: 2px solid #f5a623;
+               font-weight: normal;
+               font-family: $gothamPro_medium;
+               font-size: 9px;
+               line-height: 14px;
+               color: $color;
+               text-align: center;
+               @include radius(3px);
+          }
+          &.active {
+               @include border_active_left(); 
+          }
+     }
+     &__cont {
+          @include position(absolute, auto, $menu_height - 2, 595px, auto);
+          display: none;
+          right: -($menu_border_size + $unit);
+          border: $menu_popUp_border;
+          border-right: none;
+          @include shadow(-2px, 0px, 0px, 0px, $menu_popUp_border_color, inset);
+          background-color: $menu_popUp_color;
+     }
+     
+     &-empty {
+          @include block(center);
+          padding: 40px 10px;
+          display: none;
+          
+          span {
+               @include inline_block();
+               color: $color;
+               font-size: 14px;
+          }
+     }
+}
+
+.cart-scroll{
+     @include block();
+     width: 100%;
+     // max-height: $cart_box_height * 3!important;
+     height: $cart_box_height * 3!important;
+}
+
+.cart-box{
+     @include table();
+     border-bottom: 1px solid $menu_separator;
+     
+     &:last-child{
+          border-bottom: none;
+     }
+     &__block {
+          @include table_cell(middle);
+          height: $cart_box_height;
+          
+          &:nth-child(1) {
+               text-align: right;
+               width: 52 / ($minPage / 100%);
+          }
+          &:nth-child(2) {
+               text-align: center;
+               width: 131 / ($minPage / 100%);
+          }
+          &:nth-child(3) {
+               padding-right: 10px;
+               width: 165 / ($minPage / 100%);
+          }
+          &:nth-child(4) {
+               width: 135 / ($minPage / 100%);
+          }
+          &:nth-child(5) {
+               width: 105 / ($minPage / 100%);
+          }
+     }
+}
+
+.close-cart{
+     @include inline_block();
+     width: 14px;
+     height: 14px;
+     cursor: pointer;
+     @include background('close.svg', center);
+}
+
+.img-cart{
+     @include inline_block();
+     text-decoration: none;
+     
+     img {
+          @include inline_block();
+          max-width: 100%;
+     }
+}
+
+.brandName-cart{
+     @include block();
+     font-size: 14px;
+     line-height: 14px;
+     color: #86939E;
+}
+
+.name-cart{
+     position: relative;
+     display: inline;
+     font-family: $gothamPro_medium;
+     font-size: 14px;
+     line-height: 20px;
+     color: $color;
+     text-decoration: none;
+     
+     &:hover {
+          text-decoration: underline;
+     }
+}
+
+.price-cart-product{
+     @include inline_block();
+     font-size: 16px;
+     color: #FDFDFD;
+}
+
+.cart-info{
+     @include table_cell(middle);
+     width: inherit;
+     height: 96px;
+     padding: 0px 32px 0px 48px;
+     border-top: 1px solid $menu_separator;
+     
+     &__price {
+          @include inline_block();
+          margin-top: 13px;
+          font-size: 14px;
+          color: #858997;
+          
+          b {
+               @include inline_block();
+               margin-left: 14px;
+               top: -2px;
+               font-weight: normal;
+               font-family: $gothamPro_medium;
+               font-size: 17px;
+               color: $color;
+          }
+     } 
+     &__order {
+          @extend .button;
+          float: right;
+          width: 174px;
+          height: 42px;
+          padding-top: 10px;
+          font-size: 12px;
+          color: $color;
+          border-color: $button_border_color;
+          
+          &:hover {
+               background-color: $button_border_color;
+          }
+     }
+}
+
+
+
+/* .user ----------------------------*/ 
+.user{
+     @include block();
+     height: inherit;
+     
+     &__title {
+          @include position(absolute, 0px, 0px, 100%, 100%);
+          cursor: pointer;
+          @include background('user.svg', center);
+          @include transition($time, all);
+          z-index: 1;
+          
+          &.active {
+               @include border_active(); 
+          }
+     }
+     &__cont {
+          @include position(absolute, auto, $menu_height - 2, 210px, auto);
+          display: none;
+          right: 0px;          
+          border: $menu_popUp_border;
+          background-color: $menu_popUp_color;
+     }
+}
+
+.user-info{
+     @include block();
+     min-height: 50px;
+     padding: 14px 11px 12px 11px;
+     border-bottom: 1px solid $menu_separator;
+     
+     &__photo {
+          @include inline_block();
+          text-decoration: none;
+          
+          img {
+               @include inline_block();
+               width: 28px;
+               height: 28px;
+               border: 2px solid #414141;
+               @include radius(3px);    
+          }
+          span {
+               @include inline_block();
+               max-width: 140px;
+               white-space: nowrap;
+               text-overflow: ellipsis;
+               overflow: hidden;
+               padding: 5px 0px 0px 5px;
+               font-family: $haginCapsMedium_Regular;
+               font-size: 14px;
+               color: $color;
+               @include transition($time, color);
+          }
+          
+          &:hover span {
+               color: $menu_color_active;
+          }
+     }
+}
+
+.user-list{
+     @include block();
+     padding: 16px 0px 15px 0px;
+     
+     li {
+          @include block();
+          margin: 17px 18px;
+          
+          &:first-child{
+               margin-top: 0px;
+          }
+          &:last-child{
+               margin-bottom: 0px;
+          }
+          span {
+               @include inline_block(top, center);
+               min-width: 20px;
+               height: 20px;
+               top: -1px;
+               margin-left: 7px;
+               padding: 0px 4px;
+               border: $menu_popUp_border;
+               font-family: $gothamPro_medium;
+               font-size: 11px;
+               line-height: 16px;
+               color: $color;
+               @include radius(3px);
+          }
+     }
+     a {
+          @include inline_block();
+          padding-left: 32px;
+          font-family: $haginCapsMedium_Regular;
+          text-decoration: none;
+          font-size: 14px;
+          color: $color;
+          @include transition($time, color);
+
+          &:before {
+               position: absolute;
+               top: 0px;
+               left: 0px;
+               content: '';
+               opacity: 0.2;
+          }
+          &.user-myProfile:before {
+               top: 1px;
+               width: 15px;
+               height: 15px;
+               @include background('profile-user.svg');
+          }
+          &.user-myBali:before {
+               top: 3px;
+               width: 16px;
+               height: 13px;
+               @include background('profile-balls.svg');
+          }
+          &.user-productsVersus:before {
+               top: 1px;
+               width: 15px;
+               height: 16px;
+               @include background('profile-comparison.svg');
+          }
+          &:hover {
+               color: $menu_color_active;
+          }
+     }
+     
+}
+
+.user-exit{
+     @include block();
+     min-height: 40px;
+     padding: 18px 18px 12px 18px;
+     border-top: 1px solid $menu_separator;
+     
+     &__butt {
+          @include inline_block();
+          padding-left: 32px;
+          font-family: $haginCapsMedium_Regular;
+          text-decoration: none;
+          font-size: 14px;
+          color: $color;
+          @include transition($time, color);
+          
+          &:before {
+               @include position(absolute, 0px, 1px, 15px, 15px);
+               content: '';
+               @include background('profile-exit.svg');
+               opacity: 0.2;
+          }
+          &:hover {
+               color: $menu_color_active;
+          }
+     } 
+}
+
+
+
+/* .bigHeader -----------------------------------------------------------------------*/
+.bigHeader{
+     @include block();
+     //overflow: hidden;
+     background-color: #333; 
+
+     &-images {
+          @include position(absolute, 0px, 0px, 100%, 100%);
+          overflow: hidden;
+          
+          img {
+               @include inline_block(top, center);
+                
+               top: 50%;
+               left: 50%;
+               
+               width: auto;
+               height: auto;
+               
+               max-height: none;
+               max-width: none;
+               
+               min-height: 100%;
+               min-width: 100%;
+               
+               @include transform_translate(-50%, -50%);
+          }
+     }
+     &-cont {
+          @include table_cell(middle, center);
+          width: inherit;
+          height: 680px;
+     }
+     
+     
+
+     .menu {
+          @include position(absolute, 0px, 18px, 100%, auto);
+          background-color: transparent;
+     }
+     .menuBox {
+          @include border_vertical($menu_border_bright);   
+     }
+     .menuBox__cont {
+          height: $menu_height - ($menu_border_size * 2);
+     }
+
+     
+     
+     .menuBox__cont:nth-child(1) {
+          @include border_horizontal($menu_border_bright);
+     }
+     .menuBox__cont:nth-child(3) {
+          @include border_horizontal_left($menu_border_bright);
+     }
+     .menuBox__cont:nth-child(4) {
+          @include border_horizontal_left($menu_border_bright);
+     }
+     .menuBox__cont:nth-child(5) {
+          @include border_horizontal($menu_border_bright);
+     }
+
+     
+
+     .menuHome,.search, .cart, .user{
+          &__title {
+               height: $menu_height;
+               top: (-$menu_border_size) + $unit;
+                    
+               &.active {
+                    background-color: $menu_active;
+               }
+          }
+          &__cont {
+               top: $menu_height - ($menu_border_size * 2);
+          }
+     }
+     
+     
+     .menuUpper > ul{
+          height: $menu_height - ($menu_border_size * 2);      
+     }
+     .menuUpper > ul > li > span{
+          
+          &.active {
+               background-color: $menu_active;
+          }
+          
+          &:before {
+               top: (-$menu_border_size) + $unit;
+               height: $menu_height;
+          }  
+     }
+     .menuUpper-cont{
+          top: $menu_height - ($menu_border_size * 2);
+     }
+
+}
+
+
+
+

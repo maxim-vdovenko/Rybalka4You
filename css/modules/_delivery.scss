@@ -1,0 +1,349 @@
+/* .delivery ------------------------------------------------------------------------*/
+.delivery {
+     @include block();
+     margin-top: 28px; 
+     
+     &__butt {
+          // @include table();
+
+          display: -webkit-box;
+          display: -moz-box;
+          display: -ms-flexbox;
+          display: -webkit-flex;
+          display: flex;
+
+          -webkit-justify-content: space-between; 
+          justify-content: space-between;
+          
+     }
+     &Box {
+          // @include table_cell();
+          // width: 20%;
+          
+          span {
+               @include block(center);
+               width: $delivery_box;
+               height: 187px;
+               padding: 142px 10px 0px 10px;
+               background-color: $box_color;
+               @include shadow(0px, 0px, 0px, 2px, $box_border, inset);
+               @include fonts(13px, 18px, $haginCapsMedium_Regular);
+               color: #3D3D3D;
+               letter-spacing: 1px;
+               cursor: pointer;
+               @include transition($time, box-shadow);
+               
+               &:before{
+                    @include position(absolute, 50%, 50%, auto, auto);
+                    content: '';
+                    @include background('delivery.png');
+               }
+          }
+          
+          &.active span, &:hover span {
+               @include shadow(0px, 0px, 0px, 4px, $box_color_active, inset);
+          }
+     }
+     
+     &--pickup span {
+          &:before {
+               width: 50px;
+               height: 52px;
+               margin: -26px 0px 0px -25px;
+               background-position: 0px 0px;
+          }
+     }
+     &--courier span {
+          &:before {
+               width: 44px;
+               height: 52px;
+               margin: -26px 0px 0px -22px;
+               background-position: -100px 0px;
+          }
+     }
+     &--aroundTown span {
+          &:before {
+               width: 50px;
+               height: 54px;
+               margin: -27px 0px 0px -25px;
+               background-position: -200px 0px;
+          }
+     }
+     &--company span {
+          &:before {
+               width: 50px;
+               height: 50px;
+               margin: -25px 0px 0px -25px;
+               background-position: -300px 0px;
+          }
+     }
+     &--aroundCountry span {
+          &:before {
+               width: 110px;
+               height: 54px;
+               margin: -27px 0px 0px -55px;
+               background-position: -400px 0px;
+          }
+     }
+     
+     &__cont {
+          @include block();
+          margin: 20px 0px 42px 0px;
+          
+          &-liner {
+               @include block();
+               padding: 33px 40px 33px 48px;
+               background-color: $box_color;
+               border: 2px solid $box_border;
+          }
+          &-text {
+               @include block();
+               padding: 33px 33px 28px 33px;
+               background-color: $box_color;
+               border: 2px solid $box_border;
+               
+               p {
+                    @include block();
+                    @include fonts(16px, 24px, $gothamPro_regular);
+                    color: #4d4d4d;
+                    margin-top: 24px;
+               }
+               strong {
+                    @include block();
+                    @include fonts(18px, 24px, $gothamPro_medium);
+                    color: #4d4d4d;
+                    margin-top: 21px;
+               }
+          }
+          &-box {
+               position: relative;
+               display: none;
+               
+               .orderTitle {
+                    margin-top: 34px;
+               }
+               &.active {
+                    display: block;
+               }
+          }
+     } 
+}
+
+
+
+.post-logo {
+     @include table();
+     margin-bottom: 29px;
+     
+     &__box {
+          @include table_cell(middle, left);
+          
+          &:first-child {
+               width: 235px;
+               padding-right: 25px;
+          }
+          span {
+               @include inline_block(middle, left);
+               @include fonts(18px, 24px, $gothamPro_medium);
+               max-width: 300px;
+               color: #004c97;
+               padding-bottom: 1px;
+          }
+          img {
+               @include inline_block();
+               text-decoration: none;
+               max-width: 100%;
+          }
+     }
+}
+
+
+
+.post-calculator {
+     @include block();
+     background-color: #f7f7f7;
+     margin-top: 27px;
+     padding: 18px 35px 43px 35px;
+     
+     &__cont {
+          @include table();
+          
+          &--index .post-calculator__box {
+               vertical-align: middle;
+               padding: 14px 0px;
+          }
+     }
+     &__box {
+          @include table_cell();
+          padding: 10px 0px;
+          
+          &:first-child {
+               width: 208px;
+               
+               span, b {
+                    color: #867c7c;
+               }
+          }
+          input {
+               @include inline_block(top, center);
+               @include fonts(18px, 22px, $haginCapsMedium_Regular);
+               width: 86px;
+               height: 55px;
+               border: 2px solid #ede8e8;
+               background-color: #fff;
+               color: #4c4c4c;
+               padding-top: 2px;
+          }
+          span {
+               @include inline_block();
+               @include fonts(18px, 22px, $haginCapsMedium_Regular);
+               color: #4c4c4c;
+               padding-top: 2px;
+               
+          }
+          b {
+               @include block();
+               @include fonts(14px, 14px, $haginCapsMedium_Regular);
+               color: #4c4c4c;
+          }
+     }
+}
+
+
+
+.delivery-cities {
+     @include table_cell();
+     width: 300px;
+     white-space: nowrap;
+     
+     &:last-child {
+          width: auto;
+     }    
+     > li {
+          @include block();
+          margin-bottom: 8px;
+          
+          ul{
+               position: relative;
+               display: none;
+               padding-bottom: 1px;
+          }
+          li {
+               @include block();
+               margin-bottom: 6px;
+               
+               &:first-child{
+                    padding-top: 11px;
+               }
+          }
+          a, label {
+               @include inline_block();
+               @include fonts(12px, 18px);
+               color: #424242;
+               text-decoration: none;
+               @include transition(0.1, color); 
+               cursor: pointer;
+               
+               &:hover {
+                    // color: $menu_color_active;
+               }
+          }
+          label {
+               &.active {
+                    padding-left: 10px;
+                    color: $menu_color_active;
+               }
+          }
+          a {
+              &:hover {
+                    text-decoration: underline;
+               } 
+          }
+          > a, > span {
+               @include inline_block();
+               @include fonts(14px, 18px, $haginCapsMedium_Regular);
+               color: #222121;
+               text-decoration: none;
+               letter-spacing: 1px;
+               cursor: pointer;
+               @include transition(0.1, color); 
+               
+               &.active, &:hover {
+                    color: $menu_color_active;
+               }
+          }
+     }
+     
+     
+     .createCheckBox{
+          position: absolute;
+          left: 0px;
+          top: 3px;
+          width: 13px;
+          height: 9px;
+          @include background('selected-city.png', 0px -100px);
+          
+          &.createCheckBox-checked {
+               position: relative;
+               left: auto;
+               background-position: 0px 0px;
+          }
+     }
+}
+
+
+
+.delivery-result{
+     @include block();
+     display: none;
+     padding: 43px 40px 25px 40px;
+     border: 5px solid #f6f1f1;
+     
+     p {
+          @include block();
+          @include fonts(22px, 50px, $haginCapsMedium_Regular);
+          color: #5A5453;
+          
+     }
+}
+
+
+
+.delivery-post {
+     @include block(right);
+     border: 2px solid $box_border;
+     min-height: 73px;
+     margin: 40px 0px 20px 0px;
+     
+     span {
+          @include inline_block();
+          @include fonts(13px, 18px, $gothamPro_medium);
+          color: #4d4d4d;
+          margin: 0px 115px 0px 0px;
+          padding-top: 25px;
+          
+          &:before, &:after {
+               @include inline_block();
+               content: '';
+          }
+          &:before {
+               @include background('mail-box.png');
+               width: 40px;
+               height: 40px;
+               top: -10px;
+               margin-right: 20px;
+          }
+          &:after {
+               @include background('mail-arrow.png', right);
+               width: 237px;
+               height: 42px;
+               top: -14px;
+               margin-left: 20px;
+          }
+     }
+}
+
+
+
+
+

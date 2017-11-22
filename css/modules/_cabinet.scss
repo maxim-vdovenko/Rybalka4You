@@ -1,0 +1,376 @@
+/* .cabinet -------------------------------------------------------------------------*/
+.cabinet{
+     @include table();
+     margin: 19px 0px 40px 0px;
+     
+     &__cont {
+          @include table_cell(); 
+          width: $cabinet; 
+     }
+     &__data {
+          @include table_cell();
+          padding-left: 26px;
+     }
+     
+     
+     &-box {
+          @include block();
+          width: $cabinet;
+          background-color: $box_color;
+          border: 2px solid $cabinet_border;
+     }
+     &-info {
+          @include block();
+          padding: 26px $cabinet_padding 25px $cabinet_padding; 
+          border-bottom: 2px solid $cabinet_border;
+          
+     }
+     &-info__photo {
+          @include inline_block();
+          text-decoration: none;
+          
+          img {
+               @include inline_block();
+               width: 28px;
+               height: 28px;
+               border: 2px solid #414141;
+               @include radius(3px);    
+          }
+          span {
+               @include inline_block();
+               max-width: 140px;
+               white-space: nowrap;
+               text-overflow: ellipsis;
+               overflow: hidden;
+               padding: 5px 0px 0px 5px;
+               @include fonts(14px, 18px, $haginCapsMedium_Regular);
+               color: #202020;
+               @include transition($time, color);
+          }
+     }
+     
+     
+     &-list {
+          @include block();
+          padding: 22px $cabinet_padding 15px $cabinet_padding; 
+          
+          li {
+               @include block();
+               margin: 22px 0px;
+               
+               &:first-child {
+                    margin-top: 0px;
+               }
+               &:last-child {
+                    margin-bottom: 0px;
+               }
+               
+               &.active a, &.active b {
+                    color: #222;
+               }
+          }
+          a, b {
+               @include inline_block();
+               @include fonts(14px, 18px, $haginCapsMedium_Regular);
+               color: #A8A8A8;
+               text-decoration: none;
+               cursor: pointer;
+               @include transition($time, color);
+               
+               &:hover {
+                    color: #222;
+               }
+          }
+          span {
+               @include inline_block(top, center);
+               min-width: 20px;
+               height: 20px;
+               top: -3px;
+               margin-left: 10px;
+               padding: 0px 4px;
+               border: 2px solid #ebebeb;
+               @include fonts(11px, 16px, $gothamPro_medium);
+               color: #C3A164;
+               @include radius(3px);
+          }
+     }
+     
+     &-exit {
+          @include block();
+          border-top: 2px solid $cabinet_border;
+          padding: 29px $cabinet_padding 23px $cabinet_padding; 
+     }
+     &-exit__butt {
+          @include inline_block();
+          @include fonts(14px, 18px, $haginCapsMedium_Regular);
+          color: #4D4D4D;
+          text-decoration: none;
+     }
+     
+     &-settings {
+          @include block();
+          width: 600px;
+     }
+     &-settings__box {
+          @include block();
+          margin-bottom: 24px;
+          
+          span {
+               @include block();
+               margin-bottom: 4px;
+               @include fonts(12px, 18px, $haginCapsMedium_Regular);
+               color: #888;
+               letter-spacing: 0.75px;
+          }
+          input {
+               @include block();
+               width: 100%;
+               height: 40px;
+               padding: 2px 15px 0px 15px;
+               background-color: $fonColor;
+               border: 2px solid $cabinet_border;
+               @include fonts(14px, 20px);
+               color: #212121;
+               letter-spacing: 0.5px;
+          }
+     }
+}
+
+
+
+.cabinetData-cont{
+     position: relative;
+     display: none;
+    
+     &.active {
+         display: block;
+     }
+}
+
+
+
+/* .cabinetTable --------------------*/
+.cabinetTable{
+     position: relative;
+     width: 100%;
+     border-collapse: collapse; 
+    -webkit-box-shadow: 0px 2px 0px 0px $cabinet_border inset;
+       -moz-box-shadow: 0px 2px 0px 0px $cabinet_border inset;
+            box-shadow: 0px 2px 0px 0px $cabinet_border inset;
+     
+     td {
+          padding-left: 10px;
+          padding-right: 10px;
+         -webkit-box-shadow: 0px -2px 0px 0px $cabinet_border inset, -2px 0px 0px 0px $cabinet_border inset;
+            -moz-box-shadow: 0px -2px 0px 0px $cabinet_border inset, -2px 0px 0px 0px $cabinet_border inset;
+                 box-shadow: 0px -2px 0px 0px $cabinet_border inset, -2px 0px 0px 0px $cabinet_border inset;
+          
+          &:first-child {  
+              -webkit-box-shadow: 0px -2px 0px 0px $cabinet_border inset, -2px 0px 0px 0px $cabinet_border inset, 2px 0px 0px 0px $cabinet_border inset;
+                 -moz-box-shadow: 0px -2px 0px 0px $cabinet_border inset, -2px 0px 0px 0px $cabinet_border inset, 2px 0px 0px 0px $cabinet_border inset;
+                      box-shadow: 0px -2px 0px 0px $cabinet_border inset, -2px 0px 0px 0px $cabinet_border inset, 2px 0px 0px 0px $cabinet_border inset;
+          }
+     }
+     thead {
+          td {
+               height: 45px;
+               padding-top: 3px;
+               color: #9C9C9C;
+               @include fonts(11px, 16px);
+          }
+     }
+     tbody {
+          
+          td {
+               position: relative;  
+               height: 83px;
+               padding-top: 18px;
+               padding-bottom: 18px;
+               @include fonts(11px, 16px, $gothamPro_medium);
+               color: #4D4D4D;
+               @include transition($time, all);
+               
+               a {
+                    @include inline_block();
+                    text-decoration: none;
+               }
+               img {
+                    @include inline_block();
+                    max-width: 100%;
+               }
+          }
+          tr:hover td{  
+              -webkit-box-shadow: 0px -2px 0px 0px $cabinet_border_active inset, 
+                                  0px -2px 0px 0px $cabinet_border_active,
+                                 -2px 0px 0px 0px $cabinet_border inset;
+                 -moz-box-shadow: 0px -2px 0px 0px $cabinet_border_active inset, 
+                                  0px -2px 0px 0px $cabinet_border_active,
+                                 -2px 0px 0px 0px $cabinet_border inset;
+                      box-shadow: 0px -2px 0px 0px $cabinet_border_active inset, 
+                                  0px -2px 0px 0px $cabinet_border_active,
+                                 -2px 0px 0px 0px $cabinet_border inset;
+          }
+          tr:hover td:first-child {
+              -webkit-box-shadow: 0px -2px 0px 0px $cabinet_border_active inset, 
+                                  0px -2px 0px 0px $cabinet_border_active,
+                                  2px 0px 0px 0px $cabinet_border_active inset,
+                                 -2px 0px 0px 0px $cabinet_border inset;
+                 -moz-box-shadow: 0px -2px 0px 0px $cabinet_border_active inset, 
+                                  0px -2px 0px 0px $cabinet_border_active,
+                                  2px 0px 0px 0px $cabinet_border_active inset,
+                                 -2px 0px 0px 0px $cabinet_border inset;
+                      box-shadow: 0px -2px 0px 0px $cabinet_border_active inset, 
+                                  0px -2px 0px 0px $cabinet_border_active,
+                                  2px 0px 0px 0px $cabinet_border_active inset,
+                                 -2px 0px 0px 0px $cabinet_border inset;
+          }
+          tr:hover td:last-child {
+              -webkit-box-shadow: 0px -2px 0px 0px $cabinet_border_active inset, 
+                                  0px -2px 0px 0px $cabinet_border_active,
+                                 -2px 0px 0px 0px $cabinet_border_active inset;
+                 -moz-box-shadow: 0px -2px 0px 0px $cabinet_border_active inset, 
+                                  0px -2px 0px 0px $cabinet_border_active,
+                                 -2px 0px 0px 0px $cabinet_border_active inset;
+                      box-shadow: 0px -2px 0px 0px $cabinet_border_active inset, 
+                                  0px -2px 0px 0px $cabinet_border_active,
+                                 -2px 0px 0px 0px $cabinet_border_active inset;
+          } 
+     }
+     
+     .img-cab {
+          width: 94px;
+          text-align: center;
+     }
+     .name-cab {
+          width: auto;
+          padding-left: 32px;
+     }
+     .status-cab {
+          width: 100px;
+          text-align: center;
+     }
+     .date-cab {
+          width: 107px;
+          text-align: center; 
+     }
+     .delivery-cab {
+          width: 120px;
+          text-align: center; 
+     }
+     .number-cab {
+          width: 144px;
+          text-align: center; 
+     }
+     .price-cab {
+          width: 120px;
+          text-align: center;
+     }
+     .amount-cab {
+          width: 170px;
+          text-align: center;
+     }
+     .bonus-cab {
+          width: 122px;
+          text-align: center;
+     }
+     .close-cab {
+          width: 83px;
+          text-align: center;
+     }
+}
+
+
+.cab-orderStatus{
+     @include inline_block(top, center);
+     @include fonts(11px, 16px, $gothamPro_medium);
+     color: #8E8E8E;
+     
+     &.order-ok {
+          color: #2B8529;
+     }
+}
+
+
+
+.close-cab-butt{
+     @include inline_block(top, center);
+     width: 19px;
+     height: 19px;
+     cursor: pointer;
+     text-decoration: none;
+     @include background('close-red.svg', center);
+}
+
+
+
+.cab-nameBox{
+     @include inline_block();
+     width: 100%;
+}
+.cab-brandName, .cab-name{
+     @include table_cell();
+     span {
+          @include block();
+          margin: 12px 0px;
+     }
+}
+.cab-brandName{
+     width: 75px;
+     span {
+          @include fonts(11px, 16px);
+          color: #575757;
+     }
+}
+.cab-name{
+     span {
+          padding-left: 10px;
+          @include fonts(11px, 16px, $gothamPro_medium);
+          color: #4D4D4D;
+     }
+}
+
+
+
+/* .butt-saveSettings ---------------*/
+.butt-saveSettings{
+     @extend .button;
+     //width: 206px;
+     height: 45px;
+     padding: 14px 20px 0px 20px;
+     background-color: #2f2f2f;
+     border: none;
+     font-size: 14px;
+     color: $color;
+     border: none!important;
+     
+     &:hover {
+          background-color: #000;
+     }
+}
+
+
+
+
+.order-info-no,
+.wish-info-no,
+.products-info-no,
+.recall-info-no{
+     @include block(center);
+     @include fonts(14px, 18px, $gothamPro_medium);
+     margin: 40px 10px 20px 10px;
+     color: #4D4D4D;
+     display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

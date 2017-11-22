@@ -1,0 +1,234 @@
+.about-payment {
+     position: relative;
+     display: table;
+     width: 100%;
+     margin-top: 53px;
+     margin-bottom: 50px;
+     
+     @media screen and (max-width: 768px) {
+          margin-top: 30px;
+     }
+     &-text {
+          @include block();
+          max-width: 700px;
+          margin: 11px auto 0px auto;
+          
+          p {
+               @include block(center);
+               @include fonts(18px, 24px);
+               color: #4d4d4d;
+               
+               @media screen and (max-width: 768px) {
+                    @include fonts(14px, 20px);
+               }
+               @media screen and (max-width: 600px) {
+                    @include fonts(12px, 18px);
+               }
+          }
+     }
+     &__head, &__body {
+          position: relative;
+          display: table-row;
+          
+          &-box {
+               position: relative;
+               display: table-cell;
+               border-bottom: 2px solid #eeeff3;
+               border-right: 2px solid #eeeff3;
+               padding-left: 10px;
+               padding-right: 10px;
+               
+               &:nth-child(1) {
+                    width: 390px;
+                    border-left: 2px solid #eeeff3;
+                    
+                    @media screen and (max-width: 1024px) {
+                         width: 280px;
+                    }
+                    @media screen and (max-width: 600px) {
+                         width: 40px;
+                    }
+               }
+               &:nth-child(2) {
+                    width: auto;
+               }
+               @media screen and (max-width: 600px) {
+                    border-width: 1px!important;
+               }
+          }
+     }
+     
+     &__head {
+          background-color: #f8f8f8;
+          
+          &-box {
+               @include fonts(30px, 35px, $haginCapsMedium_Regular);
+               vertical-align: middle;
+               height: 86px;
+               padding-top: 6px;
+               border-top: 2px solid #eeeff3;
+               text-align: center;
+               color: #554a4a;
+               
+               @media screen and (max-width: 768px) {
+                    @include fonts(18px, 18px, $haginCapsMedium_Regular);
+                    height: 50px;
+               }
+               @media screen and (max-width: 600px) {
+                    @include fonts(10px, 12px, $haginCapsMedium_Regular);
+                    height: 35px;
+               }
+          }
+     }
+     &__body {
+          
+          &-box {
+               padding-top: 28px;
+               padding-bottom: 13px;
+               
+               @media screen and (max-width: 600px) {
+                    padding-top: 10px;
+                    padding-bottom: 4px;
+               }
+               span {
+                    @include block(center);
+                    @include fonts(15px, 18px);
+                    color: #4d4d4d;
+                    
+                    @media screen and (max-width: 768px) {
+                         @include fonts(12px, 16px);
+                    }
+                    @media screen and (max-width: 600px) {
+                         @include fonts(8px, 10px);
+                    }
+               }
+               
+               img {
+                    @include inline_block();
+                    max-width: 100%;
+                    margin-top: 20px;
+                    margin-bottom: 15px;
+                    
+                    &.img-cash {
+                         margin-top: 25px;
+                         
+                         @media screen and (max-width: 600px) {
+                              max-width: 40%;
+                         }
+                    }
+                    &.img-sberbank {
+                         margin-top: 55px;
+                         
+                         @media screen and (max-width: 600px) {
+                              max-width: 90%;
+                         }
+                    }
+                    &.img-online {
+                         margin-top: 23px;
+                         
+                         @media screen and (max-width: 600px) {
+                              max-width: 40%;
+                         }
+                    }
+                    &.img-payment {
+                         margin-top: 22px;
+                         
+                         @media screen and (max-width: 600px) {
+                              max-width: 40%;
+                         }
+                    }
+                    &.img-webMoney {
+                         margin-top: 34px;
+                         
+                         @media screen and (max-width: 600px) {
+                              max-width: 90%;
+                         }
+                    }
+                    &.img-yandex {
+                         margin-top: 44px;
+                         
+                         @media screen and (max-width: 600px) {
+                              max-width: 90%;
+                         }
+                    }
+                    &.img-qiwi {
+                         margin-top: 24px;
+                         
+                         @media screen and (max-width: 600px) {
+                              max-width: 70%;
+                         }
+                    }
+                    &.img-checking {
+                         
+                         @media screen and (max-width: 600px) {
+                              max-width: 40%;
+                         }
+                    }
+                    
+                    @media screen and (max-width: 1024px) {
+                         margin-top: 15px!important;
+                         margin-bottom: 15px!important;
+                    }
+               }
+               
+               ul {
+                    @include block();
+                    
+                    li {
+                         @include block();
+                         @include fonts(15px, 18px);
+                         color: #4d4d4d;
+                         padding-left: 12px;
+                         margin-bottom: 12px;
+                              
+                         &:before {
+                              @include position(absolute, 0px, 6px, 4px, 4px);
+                              @include radius(100px);
+                              background-color: #4d4d4d;
+                              content: '';
+                              
+                              @media screen and (max-width: 768px) {
+                                   width: 3px;
+                                   height: 3px;
+                                   top: 4px;
+                              }
+                              @media screen and (max-width: 600px) {
+                                   display: none;
+                              }
+                         }
+                         @media screen and (max-width: 768px) {
+                              @include fonts(12px, 16px);
+                              padding-left: 10px;
+                              margin-bottom: 8px;
+                         }
+                         @media screen and (max-width: 600px) {
+                              @include fonts(10px, 14px);
+                              padding-left: 0px;
+                              margin-bottom: 5px;
+                         }
+                    }
+               }
+               
+               &:nth-child(1) {
+                    text-align: center;
+               }
+               &:nth-child(2) {
+                    padding-left: 70px;
+                    
+                    @media screen and (max-width: 1024px) {
+                         padding-left: 20px;
+                    }
+                    @media screen and (max-width: 768px) {
+                         padding-left: 10px;
+                    }
+               }
+          }
+     }
+}
+
+
+
+
+
+
+

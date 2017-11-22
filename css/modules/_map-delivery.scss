@@ -1,0 +1,161 @@
+/* .mapDelivery -------------------------------------------------------------*/
+.delivery-mapBox {
+     @include block();
+     width: 669px;
+    
+     &--fix {
+          padding-right: 17px;
+         
+          .delivery-mapCont {
+               position: fixed;
+               top: 0px;
+          }
+     }
+     /*
+     &--absolute {
+          position: absolute;
+          top: auto;
+          bottom: 0px;
+     } 
+     */
+}
+.delivery-mapCont {
+     @include block();
+     width: 669px;
+}
+
+#map-delivery {
+     @include inline_block();
+     width: 100%;
+     height: 500px;
+     margin-bottom: 30px;
+    
+     > ymaps {
+          width: 100%!important;
+          height: 100%!important;
+     } 
+}
+
+
+
+.mapDelivery {
+     @include table();
+     margin: 23px 0px 40px 0px;
+     
+     &__cont {
+          @include table_cell();
+          // height: 500px;
+          // border: 1px solid red;
+          
+          &--text {
+               //width: 40%;
+          }
+          &--map {
+               //width: 60%;
+               width: 669px;
+              
+               padding-left: 17px;
+              
+               &.fix {
+                    vertical-align: bottom;
+               }
+          }
+     }
+     
+     .filterCont {
+          width: 100%;
+          background-color: #f8f8f8;
+     }
+     .filterCont__title.active span {
+          color: $box_color_active;
+     }
+}
+
+
+
+.delivery-listInfo {
+     @include block();
+     padding: 11px 0px 10px 0px;
+     
+     &__box {
+          @include block();
+          margin-top: 19px;
+
+          &:first-child {
+               margin-top: 0px;
+          }
+          span {
+               @include block();
+               @include fonts(14px, 16px, $gothamPro_regular);
+               color: #4d4d4d;
+               margin-bottom: 1px;
+          }
+          h4 {
+               @include inline_block();
+               @include fonts(16px, 16px, $gothamPro_regular);
+               color: #4d4d4d;
+
+               &:before {
+                    @include inline_block();
+                    @include fonts(16px, 16px, $gothamPro_regular);
+                    content: '•';
+                    color: #4d4d4d;
+                    margin-right: 5px;
+               }
+          }
+          b {
+               @include inline_block();
+               @include fonts(14px, 16px, $gothamPro_bold);
+               color: #4d4d4d;
+          }
+     }
+}
+
+
+
+.delivery-text {
+     @include block();
+     @include fonts(16px, 18px, $haginCapsMedium_Regular);
+     border: 3px solid #d8d8d8;
+     margin-bottom: 10px;
+     padding: 22px 25px 19px 25px;
+     color: #504747;
+}
+
+
+
+.delivery-infoText {
+     @include block();
+     @include fonts(14px, 17px);
+     color: #4d4d4d;
+}
+
+
+
+
+
+.mark-header {
+    @include fonts(14px, 16px, $gothamPro_medium);
+    color: #212020;
+}
+.mark-body {
+    @include fonts(12px, 16px);
+    color: #4d4d4d;
+    
+    b {
+        @include inline_block();
+        @include fonts(12px, 16px, $gothamPro_medium);
+    }
+    
+}
+.mark-title {
+    @include fonts(12px, 16px);
+    color: #4d4d4d;
+}
+
+
+
+
+
+
+

@@ -1,0 +1,99 @@
+/* .header --------------------------------------------------------------------------*/
+.header {
+     @include block(); 
+     min-height: 56px;
+     background-color: $colorBox;
+     z-index: 1;
+
+     .cont-box {
+          padding-top: 19px;
+     }
+     .cont-box:nth-child(1) {
+          padding-right: 10px;
+          width: 410 / ($minPage / 100%);
+     }
+     .cont-box:nth-child(2) {
+          padding-right: 10px;
+          width: 353 / ($minPage / 100%);
+     }
+     .cont-box:nth-child(3) {
+          text-align: right;
+          white-space: nowrap;
+          width: 380 / ($minPage / 100%);
+     }
+}
+
+.info-location {
+     @include inline_block();
+     padding-left: 18px;
+     @include fonts(12px, 25px);
+     font-family: $gothamPro_medium;
+     color: $colorInfo;
+     @include background('icon-location.png', 0px 6px);
+
+     b {
+          @include inline_block();
+          margin: 0px 1px;
+          @include fonts(inherit, inherit);
+          font-family: inherit;
+          color: #E3E3E3;
+     }
+}
+
+.info-time{
+     @include inline_block();
+     padding-left: 20px;
+     @include fonts(12px, 25px);
+     font-family: $gothamPro_medium;
+     color: $colorInfo;
+     @include background('icon-time.png', 0px 6px);
+}
+
+.info-phone{
+     @include inline_block();
+     padding-left: 21px;
+     @include background('icon-phone.png', 0px 6px);
+     
+     li {
+          @include inline_block();
+          
+          &:before{
+               @include inline_block();
+               margin: 0px 7px 0px 2px;
+               content: '|';
+               @include fonts(12px, 25px);
+               font-family: $gothamPro_medium;
+               color: #4C4C4C;
+          }
+          &:first-child:before{
+               display: none;
+          }
+     }
+
+     span {
+          @include inline_block();
+          @include fonts(12px, 25px);
+          font-family: $gothamPro_medium;
+          color: $color;
+     }
+}
+
+.butt-requestCall{
+     @include inline_block();
+     margin-left: 14px;
+     @include fonts(12px, 25px);
+     font-family: $gothamPro_medium;
+     color: #C3A164;
+     text-decoration: none;
+     
+     &:hover{
+          text-decoration: underline;
+     }
+}
+
+
+
+
+
+
+

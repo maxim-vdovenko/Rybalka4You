@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="15px" height="13px" viewBox="0 0 15 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>Imported Layers</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Menu_User" transform="translate(-1079.000000, -255.000000)" fill="#FFFFFF">
+            <g id="Categories" transform="translate(1059.000000, 146.000000)">
+                <path d="M33,109 L25,109 C23.895,109 23,109.896 23,111.001 L32,111.001 C32.552,111.001 33,111.448 33,112 L33,119 C34.104,119 35,118.105 35,117.001 L35,111.001 C35,109.896 34.104,109 33,109 L33,109 Z M30,112 L22,112 C20.895,112 20,112.896 20,114 L20,120.001 C20,121.105 20.895,122.001 22,122.001 L30,122.001 C31.104,122.001 32,121.105 32,120.001 L32,114 C32,112.896 31.104,112 30,112 L30,112 Z M23,114.001 L29,114.001 C29.015,114.001 29.027,114.008 29.042,114.009 L26,115.834 L22.958,114.009 C22.972,114.008 22.985,114.001 23,114.001 L23,114.001 Z M30,119 C30,119.553 29.552,120.001 29,120.001 L23,120.001 C22.448,120.001 22,119.553 22,119 L22,115.767 L25.485,117.858 L25.494,117.843 C25.645,117.934 25.811,118 26,118 C26.189,118 26.355,117.934 26.506,117.843 L26.514,117.858 L30,115.767 L30,119 L30,119 Z" id="Imported-Layers"></path>
+            </g>
+        </g>
+    </g>
+</svg>

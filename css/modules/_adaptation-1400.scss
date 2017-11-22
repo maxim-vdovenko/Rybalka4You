@@ -1,0 +1,71 @@
+/* 1400px ---------------------------------------------------------------------------*/
+.sliderButton{
+     
+     .slick-prev {
+          left: -20px;
+     } 
+     .slick-next {
+          right: -20px;
+     }
+}
+
+
+.band-slider{
+    padding: 0px 45px;
+}
+
+
+.slider-present-cont{
+     padding: 0px 45px;
+
+     .slick-list {
+          width: 100%;
+          left: 0px;
+     }
+}
+
+
+
+
+
+
+/* .sliderButton --------------------*/
+/*
+.sliderButton{
+     
+     .slick-prev, .slick-next {
+          position: relative;
+          display: inline-block;
+          vertical-align: top;
+         
+          width: 55px;
+          height: 55px;
+          top: 50%;
+          margin-top: -27px;
+          border: none;
+          color: transparent;
+          cursor: pointer;
+          background-color: #eaebee;
+          @include transition($time, background-color);
+          
+          &:before {
+               @include position(absolute, 50%, 50%, 13px, 12px);
+               content: '';
+               margin: -5px 0px 0px -6px;
+               @include background('slider-button.svg');
+          }
+     }
+     .slick-prev {
+          left: 0px;
+
+     } 
+     .slick-next {
+          right: 0px;
+
+     }
+}
+*/
+
+
+
+

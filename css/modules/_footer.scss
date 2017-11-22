@@ -1,0 +1,240 @@
+/* .footer --------------------------------------------------------------------------*/
+// $strip_footer: 50;
+
+.hFooter{
+     height: $footer_height;
+}
+.footer{
+     @include block(); 
+     min-width: $minPage + px;
+     height: $footer_height;
+     margin-top: -$footer_height;
+     background-color: $color_panel;
+     
+     &__cont {
+          @include block(); 
+          padding: 59px 0px 0px 0px;
+          
+          
+          .cont-block {
+               border: 1px solid $menu_border;
+               border-left: none;
+          }
+          .cont-box {
+               border-left: 1px solid $menu_border;
+          }
+          .cont-box:nth-child(1) {
+               padding: 28px 20px 0px 47px;
+               width: 258 / ($minPage / 100%);
+          }
+          .cont-box:nth-child(2) {
+               vertical-align: middle;
+               padding: 0px 10px 0px 60px;
+               width: 394 / ($minPage / 100%);
+          }
+          .cont-box:nth-child(3) {
+               width: 493 / ($minPage / 100%);
+          }
+     }
+     
+     &__strip {
+          position: absolute;
+          left: 0px;
+          bottom: 0px;
+          width: 100%;
+          height: 50px;
+          background-color: $colorBox;
+           
+          .cont-box {
+               padding-top: 15px;
+          }
+          .cont-box:nth-child(1) {
+               padding-right: 10px;
+               width: 517 / ($minPage / 100%);
+          }
+          .cont-box:nth-child(2) {
+               padding-right: 10px;
+               width: 420 / ($minPage / 100%);
+          }
+          .cont-box:nth-child(3) {
+               text-align: right;
+               width: 380 / ($minPage / 100%);
+          }
+     }
+}
+
+
+.footer-menu{
+     @include inline_block();
+     
+     li {
+          @include inline_block();
+          float: left;
+          width: 50%;
+          margin: 11px 0px 6px 0px;
+     }
+     a {
+          @include inline_block();
+          font-family: $haginCapsMedium_Regular;
+          font-size: 15px;
+          color: $color;
+          letter-spacing: 2.17px;
+          text-decoration: none;
+          @include transition($time, color);
+          
+          &:hover {
+               color: $menu_color_active;
+          }
+     }
+}
+
+
+.footer-logo{
+     @include inline_block();
+     
+     a {
+          @include inline_block();
+          text-decoration: none;
+     }
+     img {
+          @include inline_block();
+     }
+}
+
+
+.footer-text{
+     @include block();
+     margin-top: 17px;
+     font-size: 11px;
+     line-height: 16px;
+     color: $color;
+     opacity: 0.5;
+     nobr {
+          @include block();
+     }
+}
+
+
+.social-networks{
+     @include block();
+     height: 99px;
+     padding: 49px 20px 0px 38px;
+     border-bottom: 1px solid $menu_border;
+     
+     span {
+          @include inline_block();
+          font-size: 14px;
+          color: $color;
+          line-height: 16px;
+          opacity: 0.5;
+     }
+     ul {
+          @include inline_block();
+          margin-left: 28px;
+     }
+     li {
+          @include inline_block();
+          margin-right: 19px;
+     }
+     a {
+          @include inline_block();
+          opacity: 0.3;
+          @include transition($time, opacity);
+          
+          &.ic-in {
+               top: -4px;
+               width: 20px;
+               height: 21px;
+               @include background('social-networks/ic-in.svg');
+          }
+          &.ic-pi {
+               top: -4px;
+               width: 16px;
+               height: 21px;
+               @include background('social-networks/ic-pi.svg');
+          }
+          &.ic-tw {
+               top: -2px;
+               width: 21px;
+               height: 17px;
+               @include background('social-networks/ic-tw.svg');
+          }
+          &.ic-fb {
+               top: -4px;
+               width: 10px;
+               height: 21px;
+               @include background('social-networks/ic-fb.svg');
+          }
+          &:hover {
+               opacity: 1;
+          }
+     }
+}
+
+
+.cards{
+     @include block();
+     height: 96px;
+     padding: 40px 20px 0px 38px;
+     
+     span {
+          @include inline_block();
+          font-size: 14px;
+          color: $color;
+          line-height: 16px;
+          opacity: 0.5;
+     }
+     ul {
+          @include inline_block();  
+          margin-left: 14px;
+     }
+     li {
+          @include inline_block();
+          margin-right: 10px;
+     }
+     a {
+          @include inline_block();
+          opacity: 0.3;
+          @include transition($time, opacity);
+          
+          &.ic-visa {
+               top: -3px;
+               width: 52px;
+               height: 17px;
+               @include background('cards/visa.png');
+          }
+          &.ic-masterCard {
+               top: -6px;
+               width: 37px;
+               height: 24px;
+               @include background('cards/masterCard.png');
+          }
+          &.ic-electronicMoney {
+               top: -6px;
+               width: 81px;
+               height: 24px;
+               @include background('cards/electronic-money.png');
+          }
+          &:hover {
+               opacity: 1;
+          }
+     }
+     
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,307 @@
+/* .form-informing ------------------------------------------------------------------*/
+.form-informing{
+     @extend .form-popUp-box;
+     width: 837px;
+     min-height: 255px;
+     margin-top: 96px;
+     padding: 60px 20px 30px 20px;
+     
+     &__title {
+          @include block(center);
+          
+          span {
+               @include inline_block();
+               @include fonts(27px, 30px, $haginCapsMedium_Regular);
+               color: #504747;
+               padding: 0px 40px;
+               @extend .title-x;
+
+               &:before, &:after {
+                    margin-top: -5px;
+               }
+          }
+     }
+     
+     &__cont {
+          @include block(center);
+          margin-top: 27px;
+     }
+     .cont-boxForm{
+          @include inline_block();
+          height: 55px;
+     }
+}
+
+
+.form-text{
+     @include inline_block();
+     float: left;
+     width: 360px;
+     height: inherit;
+     padding: 3px 25px 0px 25px;
+     border: 3px solid $input_border_color;
+     border-right: none;
+     background-color: transparent;
+     @include fonts(14px, 20px, $haginCapsMedium_Regular);
+     color: #504747;
+     letter-spacing: $text_spacing;
+     
+     &--more {
+          width: 462px;
+     }
+}
+
+.form-butt{
+     @include inline_block(top, center);
+     width: 200px;
+     height: inherit;
+     float: left;
+     padding: 3px 5px 0px 5px;
+     @include fonts(14px, 20px, $haginCapsMedium_Regular);
+     color: $color;
+     background-color: #312f2b;
+     border: none;
+     cursor: pointer;
+     letter-spacing: $text_spacing;
+     @include transition($time, all);
+     
+     &--more {
+          width: 277px;
+     }
+     &:hover{
+          background-color: #000;
+     }
+}
+
+
+
+/* .popUp-informing -----------------------------------------------------------------*/
+.popUp-informing{
+     @extend .form-popUp-box;
+     width: 795px;
+     min-height: 255px;
+     margin-top: 97px;
+     
+     &__cont {
+          @include table_cell();
+          padding: 49px 50px 135px 40px;
+     }
+     &__img {
+          @include table_cell();
+          
+          img {
+               @include inline_block();
+          }
+     }
+     
+     &-title {
+          @include block();
+          @include fonts(27px, 32px, $haginCapsMedium_Regular);
+          color: #504747;
+     }
+     p {
+          @include block();
+          margin-top: 12px;
+          @include fonts(10px, 21px);
+          color: #504747;
+     }
+}
+
+.popUpInfo-box{
+     @include table();
+}
+
+.popUp-informing-butt{
+     @include position(absolute, auto, auto, 200px, 55px);
+     bottom: 54px;
+     width: 200px;
+     height: 55px;
+     margin-top: 26px;
+     padding: 18px 5px 0px 5px;
+     @include fonts(14px, 20px, $haginCapsMedium_Regular);
+     color: $color;
+     background-color: #312f2b;
+     border: none;
+     cursor: pointer;
+     text-align: center;
+     text-decoration: none;
+     letter-spacing: $text_spacing;
+     @include transition($time, all);
+     
+     &:hover{
+          background-color: #000;
+     }
+}
+
+
+
+.form-popUp-box{
+     @include inline_block();
+     background-color: #f8f8f8;
+     border: $form_border_size solid $form_border_color;
+}
+
+
+
+.entireWidth-box{
+     @include block();
+     background-color: $box_color;
+     
+     .container {
+          padding: 70px 0px;
+     }
+     .form-informing {
+          width: 100%;
+          margin: 0px;
+          border-color: #f4eee2;
+     }
+}
+
+
+
+/* .popUp ---------------------------------------------------------------------------*/
+.popUp{
+     @include position(fixed, 0px, 0px, 100%, 100%);
+     z-index: 1000;
+     background-color: rgba(0,0,0, 0.5);
+     display: none;
+    
+     &-title {
+          @include block(center);
+          @include fonts(18px, 30px, $haginCapsMedium_Regular);
+          color: #838383;
+     }
+     &-cont {
+          @include block();
+          margin-top: 24px;
+          
+          &--center {
+               text-align: center;
+          }
+          span {
+               @include block();
+               margin-bottom: 7px;
+               @include fonts(14px, 18px, $haginCapsMedium_Regular);
+               color: #888;
+               letter-spacing: 0.75px;
+          }
+          input {
+               @include block();
+               width: 100%;
+               height: 55px;
+               padding: 2px 27px 0px 27px;
+               background-color: $fonColor;
+               border: 2px solid $cabinet_border;
+               @include fonts(12px, 20px);
+               color: #212121;
+               letter-spacing: 0.5px;
+          }
+     }
+}
+
+.popUp-window{
+     @include position(absolute, 50%, 50%, 640px, auto);
+     min-height: 310px;
+     margin: -155px 0px 0px -320px;
+     padding: 43px 40px 20px 40px;
+     border: 8px solid #ddd2bc;
+     background-color: $box_color;
+     
+     &__title {
+          @include block(center);
+          padding-top: 66px;
+          @include fonts(18px, 30px, $haginCapsMedium_Regular);
+          color: #838383;
+          @include background('pottle.png', top);
+          
+          b {
+               @include block(center);
+               @include fonts(18px, 30px, $haginCapsMedium_Regular);
+               color: #222;
+          }
+     }
+     &__butt {
+          @include block(center);
+          margin-top: 22px;
+          
+          a {
+               margin: 0px 7px;
+          }
+     }
+}
+
+
+.popUp-continue-butt{
+     @extend .button;
+     width: 226px;
+     height: 55px;
+     padding: 16px 5px 0px 5px;
+     border-color: #c3a164;
+     font-size: 14px;
+     color: #3E3E3E;
+     
+     &:before {
+          @include inline_block();
+          content: '';
+          width: 13px;
+          height: 12px;
+          top: 3px;
+          margin-right: 13px;
+          @include background('slider-button.svg');
+     }
+     &:hover {
+          background-color: #c3a164;
+          &:before {
+               background-position: 0px -28px;
+          }
+     }
+}
+
+.popUp-order-butt{
+     @extend .button;
+     width: 206px;
+     height: 55px;
+     padding: 19px 5px 0px 5px;
+     background-color: #2f2f2f;
+     border: none;
+     font-size: 14px;
+     color: $color;
+     
+     &:before {
+          @include inline_block();
+          content: '';
+          width: 14px;
+          height: 10px;
+          top: 3px;
+          margin-right: 18px;
+          @include background('ok.png');
+          background-size: auto;  
+     }
+     &:hover {
+          background-color: #000;
+     }
+}
+
+.popUp-callBack{
+     @extend .button;
+     width: 206px;
+     height: 55px;
+     margin-bottom: 25px;
+     padding: 19px 5px 0px 5px;
+     background-color: #2f2f2f;
+     border: none;
+     font-size: 14px;
+     color: $color;
+     
+     &:hover {
+          background-color: #000;
+     }
+}
+
+
+
+
+
+
+
+

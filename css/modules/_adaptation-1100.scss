@@ -1,0 +1,104 @@
+/* 1100px ---------------------------------------------------------------------------*/
+.stockBox{
+     b {
+          @include fonts(18px, 26px, $haginCapsMedium_Regular);
+     }
+     
+     &--green {
+          padding-right: 12px;
+
+          img {
+               left: 5px;
+               top: -57px;
+          }
+          span {
+               width: 180px;
+          }
+     }
+     &--beige {
+          padding-left: 20px;
+       
+          img {
+               right: 5px;
+               top: -42px;
+          }
+          span {
+               width: 100px;
+          }
+     }
+}
+
+
+
+.delivery-mapBox, .delivery-mapCont, .mapDelivery__cont--map {
+     width: 550px;
+}
+
+
+/* .footer --------------------------------------------------------------------------*/
+.footer{
+
+     &__cont {
+          padding-top: 40px;
+
+          .cont-box:nth-child(1) {
+               padding: 20px 20px 0px 25px;
+          }
+          .cont-box:nth-child(2) {
+               padding: 0px 10px 0px 25px;
+          }
+     }
+     &__strip {
+          height: 80px;
+
+          .cont-box {
+               @include block();
+               padding-top: 10px;
+          }
+          .cont-box:nth-child(1) {
+               width: 100%;
+               padding-right: 200px;
+          }
+          .cont-box:nth-child(2) {
+               width: 100%;
+          }
+          .cont-box:nth-child(3) {
+               position: absolute;
+               width: auto;
+               top: 0px;
+               right: 0px;
+          }
+     }
+}
+
+
+.social-networks{
+     padding: 26px 20px 0px 25px;
+
+     span {
+          @include block();
+     }
+     ul {
+          @include block();
+          margin-left: 0px;
+          margin-top: 15px;
+     }
+}
+
+
+.cards{
+     padding: 26px 20px 0px 25px;
+
+     span {
+          @include block();
+     }
+     ul {
+          @include block();
+          margin-left: 0px;
+          margin-top: 15px;
+     }
+}
+
+
+
+

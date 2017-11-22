@@ -1,0 +1,359 @@
+/* 500px ----------------------------------------------------------------------------*/
+
+
+
+
+
+.popUp-informing-butt{
+     width: 100%;
+}
+.form-butt{
+     width: 100%;
+} 
+
+
+/* .slider-present ------------------*/
+.slider-present-box{
+     padding: 0px;
+}
+
+.allOffers-butt{
+     width: 100%;
+     padding: 14px 10px 10px 10px;
+}
+
+
+
+
+/* .textTitle -----------------------*/
+.textTitle{
+     margin-top: 20px;
+     
+     h2 {
+          @include fonts(23px, 28px, $haginCapsMedium_Regular);
+          padding: 0px 5px;
+     }
+     h4 {
+          margin-top: 25px;
+          padding: 0px 5px;
+          @include fonts(14px, 22px);
+     }
+     &__link {
+          width: 100%;
+     }
+}
+
+
+
+/* .title ---------------------------*/
+.title{
+     
+     h2 {
+          @include fonts(25px, 30px, $haginCapsMedium_Regular);
+          padding: 0px 10px;
+     }
+     h3 {
+          @include fonts(25px, 30px, $haginCapsMedium_Regular);
+          padding: 0px 10px;
+     } 
+}
+
+
+
+/* .stock ---------------------------*/
+.stock{
+     padding: 20px 0px 0px 0px;  
+}
+
+.stockBox{
+     min-height: inherit;
+     border-width: 8px;
+     text-decoration: none;
+     padding: 20px;
+     
+     b {
+          @include block(); 
+          height: auto;
+     }
+    
+     &--green {
+          img {
+               display: none;
+          }
+          span {
+               @include inline_block(); 
+               width: 100%;
+               float: none;
+          }
+     }
+     &--beige {
+          img {
+               display: none;
+          }
+          span {
+               @include inline_block(); 
+               width: 100%;
+               float: none;
+          }
+     }
+}
+
+
+
+/* .cabinet -------------------------*/
+.cabinetTable{
+     
+     td {
+          padding-left: 2px;
+          padding-right: 2px;
+     }
+     thead {
+          td {
+               height: 40px;
+               @include fonts(5px, 8px);
+          }
+     }
+     tbody {
+          
+          td { 
+               height: 60px;
+               padding-top: 2px;
+               padding-bottom: 2px;
+               @include fonts(5px, 8px, $gothamPro_medium);
+          }
+     } 
+     
+     .img-cab {
+          padding-left: 3px;
+          padding-right: 3px;
+          width: 30px;
+          min-width: 30px;
+     }
+}
+
+
+.cab-orderStatus{
+     @include fonts(6px, 8px, $gothamPro_medium);
+}
+
+
+.cab-brandName, .cab-name{
+     span {
+          font-size: 6px;
+          line-height: 6px;
+          margin: 6px 0px;
+     }
+}
+
+
+
+/* .cart ----------------------------*/
+.cart-info{
+     height: auto;
+     padding: 0px 10px;
+     
+     &__price {
+          @include block(center);
+          margin-top: 17px;
+     } 
+     &__order {
+          @include block(center);
+          width: 100%;
+          margin: 14px 0px 12px 0px;
+     }
+}
+
+
+
+/* .bigHeader -----------------------*/
+.bigHeader{
+
+     &-images {
+
+          img {
+               top: 0px;
+               width: auto;
+               height: 100%;
+               @include transform_translate(-50%, 0px);
+          }
+     }
+     
+     &-cont {
+          
+          .error-info{
+               margin: 300px 0px 70px 0px;
+          }
+     } 
+}
+
+
+/* .error-info ----------------------*/
+.error-info{
+     width: 100%;
+     
+     p {
+          @include fonts(14px, 21px, $gothamPro_medium);
+     }
+     &__butt {
+          width: 100%;
+     }
+}
+
+
+.recall-send-butt{
+     width: 100%;
+}
+
+
+.track-order-butt{
+     width: 100%;
+}
+
+
+.request-callBack{
+     width: 100%;
+}
+
+
+.cartOrder-butt{
+
+     .price-total {
+          text-align: center;
+          margin: 30px 0px 0px 0px;
+     }
+     .back-directory-butt, .promo-code, .checkout-butt {
+          width: 100%;
+     } 
+}
+
+
+.cartOrder-info{
+     margin: 20px 0px 30px 0px;
+     padding: 8px 10px 5px 10px;
+}
+
+
+
+/* .catalog -------------------------*/
+.catalog{
+     
+     &__box {
+          width: 100%;
+          padding: 0px;
+     } 
+}
+
+
+/* .productBig ----------------------*/
+.productBig{
+     
+     &__data-butt {
+          margin-top: 20px;
+     }
+     
+     .goCart-butt {
+          display: block;
+          width: 100%;
+     }
+     .goComparison-butt {
+          display: block;
+          width: 100%;
+          margin-top: 15px;
+     }
+}
+
+
+
+/* .filter-result -------------------*/
+.filter-result{
+     text-align: center;
+     margin-top: 24px;  
+     margin-bottom: -10px;
+}
+
+
+
+/* .filterButton --------------------*/
+.filterButton{
+     margin: 20px 0px 10px 0px;
+     
+     &__perform, &__clean {
+          @include block(center);
+          width: 100%;
+          height: 45px;
+          float: none;
+          margin-top: 10px;
+     }
+}
+
+
+
+/* .filter-popUp --------------------*/
+.filter-popUp{
+     @include shadow(0px, 0px, 12px, 0px, rgba(0, 0, 0, 0.1));
+     @include position(absolute, 23px, -12px, auto, auto);
+     @include radius(4px);
+     border: 2px solid #d8d8d8;
+     padding: 10px 10px 6px 10px;
+     white-space: normal;
+
+     &:before {
+          @include position(absolute, -6px, 12px, 8px, 8px);
+          margin-top: 0px;
+          border-left: 2px solid #d8d8d8;
+          border-bottom: 2px solid #d8d8d8;
+     }
+     span {
+          @include fonts(11px, 14px, $gothamPro_regular);
+          margin-right: 3px;
+     }
+     b {
+          @include fonts(12px, 14px, $gothamPro_bold);
+          margin: 0px 4px;
+     }
+     a {
+          @include fonts(11px, 14px, $gothamPro_regular);
+     }
+}
+
+
+
+.filterCont-list--number {
+     padding-right: 50px;
+     
+     .filter-popUp {
+          width: 120px;
+          left: -17px;
+          
+          &:before {
+               left: 8px;
+               left: 25px;
+          }
+     }
+}
+
+
+
+/* .filter-block --------------------*/
+.filter-block{
+     padding: 22px 0px 0px 0px;
+     
+     &__button, &__button-all {
+          @include fonts(10px, 16px);
+          height: 30px;
+          margin: 0px 10px 10px 0px;
+          padding: 8px 10px 0px 10px;
+          
+          &.active {
+               @include shadow(0px, 0px, 0px, 2px, #7b7b7b, inset);
+          }
+     }
+}
+
+
+
+
+
+
+
+

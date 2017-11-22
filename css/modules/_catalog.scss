@@ -1,0 +1,572 @@
+/* .catalog -------------------------------------------------------------------------*/
+.catalog{
+     @include inline_block();
+     width: $minPage + $product_padding_x;
+     left: -$product_padding_x / 2;
+     @include transition($timeCatalog, all);
+
+
+     &__box {
+          @include inline_block();
+          float: left;
+          width: 25%;
+          margin-top: 28px;
+          padding: 0px $product_padding_x / 2;
+          @include transition($timeCatalog, all);
+     } 
+    
+     &-events {
+          @include block(center);
+          padding: 50px 0px;
+          
+          p {
+               @include block(center);
+               @include fonts(22px, 26px, $haginCapsMedium_Regular);
+               color: #000; 
+          }
+     }
+}
+
+
+
+.catalogBig{
+     @include block();
+     @include transition($timeCatalog, all);
+}
+
+
+
+.filter-box-butt{
+     @include table_cell();
+     padding-right: $product_padding_x;
+}
+.filter-butt{
+     @extend .button;
+     width: 267px;
+     height: 65px;
+     padding: 21px 5px 0px 35px;
+     border-color: #d8d8d8;
+     font-size: 14px;
+     color: #504747;
+     cursor: pointer;
+     text-align: left;
+     background-color: $fonColor;
+     
+     &:before {
+          @include inline_block();
+          content: '';
+          width: 13px;
+          height: 12px;
+          top: 4px;
+          margin-right: 20px;
+          @include background('slider-button.svg', -27px 0px);
+     }
+     &:hover {
+          background-color: #d8d8d8;
+     }
+     &.active {
+          &:before {
+               background-position: 0px 0px;
+          }
+     }
+}
+
+
+
+/* .catalog-global ------------------*/
+.catalog-global{
+     @include inline_block();
+     width: 100%;
+     
+     &.active .catalog {
+          padding-left: $filter_padding;
+          
+          .catalog__box {
+               width: 33.33%;
+          }     
+     }
+     &.active .catalogBig {
+          padding-left: $filter_padding;
+     }
+     &.active .banner {
+          margin-left: $filter_padding;
+     }
+     &.active .pagination {
+          margin-left: $filter_padding;
+     }
+}
+
+
+
+/* .filter --------------------------*/
+.filter{
+     @include position(absolute, 0px, 0px, $filter, 100%);
+     background-color: $box_color;
+     display: none;
+     
+     &__fon {
+          @include position(absolute, 0px, 0px, 10000px, 100%);
+          content: '';
+          left: auto;
+          right: 0px;
+          background-color: $box_color;
+     }
+     &__cont {
+          @include block();
+          margin-top: 116px;
+     }
+     &.active {
+          z-index: 1;
+     }
+}
+
+
+
+.filterCont-block {
+     @include block();
+}
+
+
+/* .filterCont ----------------------*/
+.filterCont{
+     @include block();
+     width: 267px;
+     margin-bottom: -2px;
+     @include shadow(0px, 0px, 0px, 2px, $box_border, inset);
+     
+     &__title {
+          @include block();
+          width: inherit;
+          cursor: pointer;
+          
+          span {
+               @include table_cell(middle);
+               width: inherit;
+               height: 62px;
+               padding: 8px 40px 0px 30px;
+               @include fonts(16px, 18px, $haginCapsMedium_Regular);
+               letter-spacing: 1.14px;
+               color: #222;
+          }
+          &.active .butt-filter {
+               &:after {
+                    display: none;
+               } 
+          }
+     }
+     .butt-filter {
+          @include position(absolute, auto, 50%, 16px, 16px);
+          right: 20px;
+          margin-top: -6px;
+          @include radius(1000px);
+          border: 2px solid $filter_butt_color;
+          cursor: pointer;
+          
+          &:before, &:after {
+               position: absolute;
+               content: '';
+               background-color: $filter_butt_color;
+               top: 50%;
+               left: 50%;
+          }
+          &:before {
+               width: 8px;
+               height: 2px;
+               margin: -1px 0px 0px -4px;
+          }
+          &:after {
+               width: 2px;
+               height: 8px;
+               margin: -4px 0px 0px -1px;
+          }
+     }
+     
+     &__box {
+          position: relative;
+          display: none;
+          padding: 19px 30px 16px 30px;
+          @include shadow(0px, 2px, 0px, 0px, $box_border, inset);
+     }
+     
+     &-list {
+          @include block();
+          
+          li {
+               @include block();
+               margin: 7px 0px;
+          }
+          
+          label, label span {
+               @include inline_block();
+               @include fonts(12px, 16px);
+               color: #363B36; 
+               cursor: pointer;
+          }
+          label span {
+               padding-left: 10px;
+          }
+          
+          &--number {
+               
+               li {
+                    @include inline_block();
+                    margin: 5px 6px 5px 0px;
+               }
+               label {
+                    width: auto;
+                    min-width: 30px;
+                    height: 30px;
+               }
+               label > span {
+                    @include position(relative, 0px, 0px, 100%, 100%);
+                    text-align: center!important;
+                    padding: 10px 5px 0px 5px!important;
+                    font-size: 10px!important;
+                    line-height: 14px!important;
+               }
+               .createCheckBox {
+                    @include position(absolute, 0px, 0px, 100%, 100%);
+                    position: absolute!important;
+                    top: 0px!important;
+                    left: 0px!important;
+                    width: 100%!important;
+                    height: 100%!important;
+                    background-image: none!important;
+                    background-color: #efefef;
+                    @include radius(3px);
+                    
+                    &.createCheckBox-checked {
+                         @include shadow(0px, 0px, 0px, 2px, #c3a164, inset);
+                    }
+               }
+               
+               .filter-popUp {
+                    top: 40px;
+                    left: 0px;
+                    
+                    &:before {
+                         @include position(absolute, 7px, -8px, 8px, 8px);
+                         margin-top: 0px;
+                         border-top: 3px solid #d8d8d8;
+                         border-bottom: none;    
+                    }
+                    
+               }
+               
+          }
+     }
+     .createCheckBox {
+          width: 14px;
+          height: 14px;
+          @include background('checkbox-2.svg');
+
+          &.createCheckBox-checked {
+               background-position: 0px -40px;
+          }
+     }
+}
+
+
+
+/* .filter-popUp --------------------*/
+.filter-popUp{
+     @include shadow(0px, 0px, 15px, 0px, rgba(0, 0, 0, 0.15));
+     @include position(absolute, 23px, -16px, 300px, auto);
+     @include radius(5px);
+     text-align: left;
+     padding: 14px 15px 10px 15px;
+     background-color: #fff;
+     border: 3px solid #d8d8d8;
+     z-index: 10;
+     display: none;
+     //white-space: nowrap;
+     //opacity: 0;
+    
+     
+     &.active {
+          //opacity: 1;
+          //display: block;
+     }
+     &:before {
+          @include position(absolute, -8px, 50%, 8px, 8px);
+          @include radius(2px);
+          @include rotate(45);
+          margin-top: -6px;
+          background-color: #fff;
+          border-left: 3px solid #d8d8d8;
+          border-bottom: 3px solid #d8d8d8;
+          content: '';
+     }
+     span {
+          @include inline_block();
+          @include fonts(12px, 16px, $gothamPro_regular);
+          color: #000;
+          letter-spacing: 0.5px;
+          margin-right: 4px;
+     }
+     b {
+          @include inline_block();
+          @include fonts(14px, 16px, $gothamPro_bold);
+          color: #000;
+          letter-spacing: 0.5px;
+          margin: 0px 5px;
+     }
+     a {
+          @include inline_block();
+          @include fonts(12px, 16px, $gothamPro_regular);
+          color: #C3A164;
+          letter-spacing: 0.5px;
+          
+          &:hover {
+               text-decoration: none;
+          } 
+     }
+}
+
+
+
+/* .filter-result -------------------*/
+.filter-result{
+    @include block();
+    margin: 30px 0px -15px 0px;
+    
+    span {
+          @include inline_block();
+          @include fonts(13px, 18px, $gothamPro_regular);
+          color: #000;
+          letter-spacing: 0.5px;
+          margin-right: 4px;
+     }
+     b {
+          @include inline_block();
+          @include fonts(14px, 18px, $gothamPro_bold);
+          color: #000;
+          letter-spacing: 0.5px;
+          margin: 0px 5px;
+     }
+     a {
+          @include inline_block();
+          @include fonts(13px, 18px, $gothamPro_regular);
+          color: #C3A164;
+          letter-spacing: 0.5px;
+          
+          &:hover {
+               text-decoration: none;
+          } 
+     }   
+}
+
+
+
+/* .filterButton --------------------*/
+.filterButton{
+     @include inline_block();
+     width: 100%;
+     padding-right: 13px;
+     margin-top: 40px;
+     
+     &__perform, &__clean {
+          @include inline_block(top, center);
+          @include transition($time, all);
+          width: 120px;
+          height: 45px;
+          padding: 2px 5px 0px 5px;
+          color: #504747;
+          border: 3px solid #d8d8d8;
+          background-color: transparent;
+          @include fonts(14px, 16px, $haginCapsMedium_Regular);
+          letter-spacing: 1px;
+          text-decoration: none;
+          cursor: pointer;
+          
+          &:hover {
+               background-color: #d8d8d8;
+          }
+     }
+     
+     &__perform {
+          float: left;
+     }
+     &__clean {
+          float: right;
+     }
+}
+
+.filterButton{
+     a.filterButton__perform, a.filterButton__clean {
+          padding-top: 13px;
+     }
+}
+
+
+
+/* .flSlider ------------------------*/
+.flSlider{
+     @include block();
+     margin: 6px 0px 10px 0px;
+     
+     &__title {
+          @include table();
+     }
+     
+     &-contCenter {
+          @include block(center);
+          height: 0px;
+          text-align: center;
+          
+          .filter-popUp {
+               position: relative;
+               left: auto;
+               top: auto;
+               margin-top: 10px;
+
+               &:before {
+                    @include position(absolute, 100px, -8px, 8px, 8px);
+                    margin: 0px 0px 0px 0px;
+                    border-top: 3px solid #d8d8d8;
+                    border-bottom: none;
+               }
+          }  
+     }
+     &-contBox {
+          @include inline_block();
+          height: 0px;
+          text-align: center;
+     }
+     
+     &-cont {
+          @include table_cell();
+          width: 50%;
+          height: 42px;
+          // border: 1px solid red;
+
+          > span {
+               @include inline_block();
+               margin-top: 14px;
+               @include fonts(12px, 18px);
+               color: #86939E;
+          }
+          > input {
+               position: absolute;
+               top: 0px;
+               right: 0px;
+               width: 70px;
+               height: 100%;
+               padding: 3px 5px 0px 5px;
+               border: 2px solid #e1e8ee;
+               background-color: transparent;
+               @include fonts(14px, 18px);
+               color: #3E3E3E;
+               text-align: center;
+          }
+          &:first-child{
+               input {
+                    right: 10px;
+               }
+          }
+          &:last-child{
+               padding-left: 5px;
+          }
+     }
+     &-info {
+          @include inline_block();
+          width: 100%;
+          margin-top: 12px;
+          
+          span {
+               position: relative;
+               @include fonts(10px, 14px);
+               color: #86939E;
+          }
+     }
+     .fl-flSlider-from {
+          float: left;
+     }
+     .fl-flSlider-before {
+          float: right;
+     }
+     
+     &-box {
+          @include block();
+          margin-top: 30px;
+          height: 5px;
+          background-color: #e5e6e6;
+          cursor: pointer;
+          //border: none;
+          //@include radius(0px);
+     }
+     
+     .ui-slider-range {
+          position: absolute;
+          top: 0px;
+          height: 100%;
+          background-color: #8f8f8f;
+          cursor: pointer;
+     }
+     
+     .ui-slider-handle {
+          position: absolute;
+          top: -3px;
+          width: 5px;
+          height: 11px;
+          background-color: #3e3e3e;
+          cursor: pointer;
+     } 
+
+}
+
+
+
+/* .filter-block --------------------*/
+.filter-block{
+     @include inline_block();
+     width: 100%;
+     padding: 28px 13px 0px 0px;
+     
+     &__button, &__button-all {
+          @include inline_block();
+          @include fonts(13px, 18px);
+          @include shadow(0px, 0px, 0px, 2px, #eeeff3, inset);
+          float: left;
+          height: 44px;
+          margin: 0px 0px 13px 13px;
+          padding: 14px 17px 0px 17px;
+          background-color: #f8f8f8;
+          color: #4d4d4d;
+          text-decoration: none;
+          
+          &.active {
+               @include shadow(0px, 0px, 0px, 3px, #7b7b7b, inset);
+               
+               &:hover {
+                    text-decoration: none;
+               }
+          }
+     }
+     
+     &__button {
+          &:hover {
+               text-decoration: underline;
+          }
+     }
+     
+     &__button-all {
+          color: #b8b8b8;
+          display: none;
+     }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

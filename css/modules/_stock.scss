@@ -1,0 +1,109 @@
+/* .stock ---------------------------------------------------------------------------*/
+.stock{
+     @include block(); 
+     padding: 72px 0px 83px 0px;  
+}
+
+
+.stockCont{
+     @include table(); 
+     
+     &__left, &__right {
+          @include table_cell(); 
+     }
+     &__left {
+          width: 720 / ($minPage / 100%);
+          padding-right: 10px;
+     }
+     &__right {
+          width: 424 / ($minPage / 100%);
+          padding-left: 10px;
+     }
+}
+
+
+.stockBox{
+     @include block(); 
+     min-height: 187px;
+     border-width: 12px;
+     border-style: solid;
+     
+     img {
+         position: absolute;
+     }
+     span {
+          position: relative;
+     }
+     b {
+          @include table_cell(middle); 
+          height: 175px;
+
+          @include fonts(27px, 30px, $haginCapsMedium_Regular);
+          color: #504747;
+     }
+     
+     &--green {
+          border-color: #e8eee2;
+          padding-right: 50px;
+
+          img {
+               left: 5px;
+               top: -57px;
+          }
+          span {
+               width: 270px;
+               float: right;
+          }
+     }
+     &--beige {
+          border-color: #f4eee2;
+          padding-left: 42px;
+       
+          img {
+               right: 5px;
+               top: -42px;
+          }
+          span {
+               width: 155px;
+               float: left;
+          }
+     }
+}
+
+
+.filter-stockBox{
+     @include block(); 
+     width: 267px;
+     margin-top: 50px;
+     
+     .stockBox {
+          min-height: 334px;
+          padding: 39px 0px 0px 0px;
+          
+          img {
+               top: auto;
+               bottom: -20px;
+          }
+          &--beige img{
+               right: auto;
+               left: 42px;
+               bottom: -60px;
+          }
+          
+          span {
+               @include block(center); 
+               width: 100%;
+               float: none;
+          }
+          b {
+               @include inline_block(top, center);
+               height: auto;
+               // line-height: 27px;
+          }
+          
+     }
+}
+
+
+
+

@@ -1,0 +1,26 @@
+/* .tagline -------------------------------------------------------------------------*/
+.tagline{
+     @include block();
+     @include background('images-fon/img-1.jpg', center);
+     background-size: cover;
+     
+     &__cont {
+          @include table_cell(middle);
+          width: inherit;
+          height: 604px;
+          padding: 10px 36px 0px 36px;
+     }
+     .textTitle {
+          width: 676px;
+     }
+}
+
+
+
+
+
+
+
+
+
+

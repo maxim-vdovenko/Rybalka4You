@@ -1,0 +1,265 @@
+.buy {
+     @include block();
+     margin-top: 40px;
+     margin-bottom: 50px;
+     
+     @media screen and (max-width: 768px) {
+          //margin-top: 30px;
+     }
+     &__box {
+          @include block();
+          max-width: 680px;
+          margin-bottom: 30px;
+          
+          @media screen and (max-width: 768px) {
+               margin-bottom: 25px;
+          }
+          &-title {
+               @include block();
+               @include fonts(30px, 35px, $haginCapsMedium_Regular);
+               color: #554a4a;
+               margin-left: 96px;
+               
+               b {
+                    @include inline_block();
+                    @include fonts(inherit, inherit, $haginCapsMedium_Regular);
+                    color: inherit;
+                    margin-right: 15px;
+                    
+                    @media screen and (max-width: 768px) {
+                         margin-right: 8px;
+                    }
+               }
+               
+               @media screen and (max-width: 768px) {
+                    @include fonts(22px, 28px, $haginCapsMedium_Regular);
+                    margin-left: 0px;
+               }
+               @media screen and (max-width: 600px) {
+                    @include fonts(18px, 24px, $haginCapsMedium_Regular);
+               }
+          }
+          &-text {
+               @include block();
+               margin: 20px 0px 0px 100px;
+               padding: 0px 0px 41px 25px;
+               border-left: 2px solid $box_color_active;
+               
+               p {
+                    @include block();
+                    @include fonts(18px, 29px);
+                    top: -6px;
+                    color: #4d4d4d;
+                    
+                    @media screen and (max-width: 768px) {
+                         @include fonts(14px, 23px);
+                         top: 0px; 
+                    }
+                    @media screen and (max-width: 600px) {
+                         @include fonts(12px, 18px);
+                    }
+               }
+               &:after {
+                    @include position(absolute, -9px, auto, 16px, 14px);
+                    @include background('arrow-min.png');
+                    content: '';
+                    bottom: -2px;
+                    
+                    @media screen and (max-width: 768px) {
+                         display: none;
+                    }
+               }
+               
+               @media screen and (max-width: 768px) {
+                    margin: 4px 0px 0px 0px;
+                    padding: 0px;
+                    border-left: none;
+               }
+          }
+          
+          &--order {
+               @include background('buy/order.png');
+          }
+          &--matching {
+               @include background('buy/matching.png', 5px 0px);
+          }
+          &--checking {
+               @include background('buy/checking.png', 10px 0px);
+          }
+          &--assembly {
+               @include background('buy/assembly.png');
+          }
+          &--delivery {
+               @include background('buy/delivery.png', 4px 0px);
+          }
+          
+          @media screen and (max-width: 768px) {
+               background-image: none;
+          }
+     }
+     
+     &__details {
+          @include inline_block();
+          margin-top: 3px;
+          padding-left: 94px;
+          width: 100%;
+          
+          @media screen and (max-width: 768px) {
+               @include block();
+               padding-left: 0px;
+               margin-top: 50px;
+               width: auto;
+          }
+          
+          &-box {
+               @include inline_block();
+               float: left;
+               width: 50%;
+               
+               &:first-child {
+                    padding-right: 30px;
+                    
+                    .buy__details-title {
+                         b {
+                              @include position(absolute, 50%, 0px, 69px, auto);
+                              @include fonts(16px, 21px, $gothamPro_bold);
+                              text-transform: uppercase;
+                              background-color: $fonColor;
+                              text-align: center;
+                              margin-left: 38px;
+                              color: #ccc;
+                              
+                              @media screen and (max-width: 900px) {
+                                   @include fonts(14px, 15px, $gothamPro_bold);
+                                   width: 50px;
+                              }
+                              @media screen and (max-width: 768px) {
+                                   display: none;
+                              }
+                         }
+                         &:before {
+                              @include position(absolute, 0px, 8px, 100%, 2px);
+                              content: '';
+                              background-color: #cfcfcf;
+                              
+                              @media screen and (max-width: 900px) {
+                                   top: 7px;
+                                   height: 1px;
+                              }
+                              @media screen and (max-width: 768px) {
+                                   display: none;
+                              }
+                         }
+                    }
+               }
+               
+               @media screen and (max-width: 768px) {
+                    @include block();
+                    float: none;
+                    width: auto;
+                    padding: 0px;
+                    margin-bottom: 28px;
+               }
+          }
+          &-title {
+               @include block();
+               
+               span {
+                    @include inline_block();
+                    @include fonts(18px, 20px, $gothamPro_bold);
+                    padding: 0px 28px 0px 34px;
+                    background-color: $fonColor;
+                    text-transform: uppercase;
+                    color: #4d4d4d;
+                    
+                    &:after {
+                         @include position(absolute, 0px, 1px, 14px, 14px);
+                         @include radius(100px);
+                         background-color: $box_color_active;
+                         content: '';
+                         
+                         @media screen and (max-width: 900px) {
+                              width: 7px;
+                              height: 7px;
+                              top: 4px;
+                         }
+                         @media screen and (max-width: 768px) {
+                              width: 4px;
+                              height: 4px;
+                              top: 5px;
+                         }
+                    }
+                    
+                    @media screen and (max-width: 900px) {
+                         @include fonts(16px, 18px, $gothamPro_bold);
+                         padding: 0px 10px 0px 20px;
+                    }
+                    @media screen and (max-width: 768px) {
+                         @include fonts(14px, 16px, $gothamPro_bold);
+                         padding: 0px 0px 0px 15px;
+                         margin-bottom: 12px;
+                    }
+               }
+          }
+          &-cont {
+               @include block();
+               margin: 30px 0px 0px 34px;
+               
+               @media screen and (max-width: 768px) {
+                    margin: 0px 0px 0px 0px;
+               }
+               
+               li {
+                    @include block();
+                    @include fonts(18px, 30px);
+                    color: #4d4d4d;
+                    padding-left: 22px;
+                    margin-bottom: 30px;
+                    
+                    &:before {
+                         @include position(absolute, 0px, 2px, auto, auto);
+                         @include fonts(inherit, inherit);
+                         color: #4d4d4d;
+                         content: '—';
+                         
+                         @media screen and (max-width: 768px) {
+                              @include fonts(10px, 16px);
+                         }
+                    }
+                    @media screen and (max-width: 1024px) {
+                         @include fonts(16px, 25px);
+                         margin-bottom: 10px;
+                    }
+                    @media screen and (max-width: 900px) {
+                         @include fonts(14px, 22px);
+                         margin-bottom: 8px;
+                    }
+                    @media screen and (max-width: 768px) {
+                         @include fonts(12px, 17px);
+                         padding-left: 15px;
+                    }
+               }
+               p {
+                    @include block();
+                    @include fonts(14px, 20px, $gothamPro_medium);
+                    color: $box_color_active;
+                    margin-top: 6px;
+                    
+                    @media screen and (max-width: 1024px) {
+                         @include fonts(12px, 18px, $gothamPro_medium);
+                         margin-top: 0px;
+                    }
+                    @media screen and (max-width: 768px) {
+                         @include fonts(10px, 16px, $gothamPro_medium);
+                    }
+               }
+          }
+     }
+}
+
+
+
+
+
+
+

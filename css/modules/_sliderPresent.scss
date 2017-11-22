@@ -1,0 +1,104 @@
+/* .slider-present ------------------------------------------------------------------*/
+.slider-present{
+     @include block();
+     padding: 80px 0px 70px 0px;
+     overflow: hidden;
+     
+     &__butt {
+          @include block(center);
+          margin-top: 74px;
+     }
+     
+     &.similarModels {
+          background-color: #f8f8f8;
+     }
+     &.alsoPurchased {
+          background-color: $fonColor;
+     }
+     &.similarModels, &.alsoPurchased {
+          padding: 60px 0px 58px 0px; 
+          
+          .slider-present-cont{
+               margin-top: 35px;
+          }
+     }
+     
+     .productTitle {
+          margin-top: 0px;
+     }
+     
+     
+     &.colorAdd {
+          background-color: $box_color;
+          padding: 30px 0px 50px 0px;
+          
+          .slick-prev, .slick-next {
+               background-color: #eeeff3;
+               &:hover {
+                    background-color: #ddd8cf;
+               }
+          }
+          
+          .slider-present-cont {
+               margin-top: 50px;
+          }
+     }
+}
+
+.slider-present-cont{
+     @include block();
+     max-height: 480px;
+     margin-top: 62px;
+     @extend .sliderButton;
+     @include transition($time, opacity);
+     opacity: 0;
+
+     .slick-prev, .slick-next {
+          background-color: #f4f4f4;
+     }
+     .slick-list {
+          width: $minPage + $product_padding_x;
+          left: -$product_padding_x / 2;
+     }
+     .slick-dots {
+          display: none;
+     }
+}
+
+.slider-present-box{
+     @include block();
+     padding: 0px $product_padding_x / 2;
+}
+
+
+
+.allOffers-butt{
+     @include inline_block(top, center);
+     @extend .button;
+     min-width: 290px;
+     min-height: 55px;
+     padding: 16px 5px 10px 5px;
+     border-color: $product_butt_list;
+     color: #504747;
+     font-size: 14px;
+     text-transform: uppercase;
+     letter-spacing: $text_spacing;
+     
+     &:hover {
+          background-color: $product_butt_list;
+     }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

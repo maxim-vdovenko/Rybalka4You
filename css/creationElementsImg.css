@@ -1,0 +1,51 @@
+.createCheckBox, .createCheckBox2{
+   position: relative;
+   display: inline-block;
+   vertical-align: top;
+   
+   width: 18px;
+   height: 18px;
+     
+   background-image: url(../images/checkbox.svg);
+   background-position: 0px 0px;
+   background-repeat: no-repeat;
+   cursor: pointer;
+}
+.createCheckBox.createCheckBox-checked{background-position:0px -42px;}
+
+
+/*
+.createRadio, .createRadio2{
+   position:relative;
+   display:inline-block;
+   vertical-align:top;
+   
+   width:26px;
+   height:26px;
+   background-image:url(../images/radiobutton.png);
+   background-position:0px 0px;
+   background-repeat:no-repeat;
+   cursor:pointer;
+   z-index:0;
+}
+.createRadio.createRadio-checked{background-position:0px -40px;}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,233 @@
+@mixin block($align: left) {
+     position: relative;
+     display: block;
+     text-align: $align;
+}
+
+@mixin inline_block($vertical: top, $align: left) {
+     position: relative;
+     display: inline-block;
+     vertical-align: $vertical;
+     text-align: $align;
+}
+
+@mixin table($x: 100%) {
+     position: relative;
+     display: table;
+     width: $x;
+}
+
+@mixin table_cell($vertical: top, $align: left) {
+     position: relative;
+     display: table-cell;
+     vertical-align: $vertical;
+     text-align: $align;
+}
+
+@mixin table_row() {
+     position: relative;
+     display: table-row;
+}
+
+@mixin position($pos: absolute, $left: 0px, $top: 0px, $width: auto, $height: auto) {
+     position: $pos;
+     top: $top;
+     left: $left;
+     width: $width;
+     height: $height;
+}
+
+@mixin fonImage($image, $pos: top, $repeat: no-repeat) {
+     background-image: url(#{$pathIng}#{$image});
+     background-position: $pos;
+     background-repeat: $repeat;
+}
+
+@mixin radius($val: 0px) {
+    -webkit-border-radius: $val;
+     -khtml-border-radius: $val;
+       -moz-border-radius: $val;
+	       border-radius: $val; 
+}
+
+@mixin radiusAll($a1: 0px, $a2: 0px, $a3: 0px, $a4: 0px) {
+    -webkit-border-radius: $a1 $a2 $a3 $a4;
+     -khtml-border-radius: $a1 $a2 $a3 $a4;
+       -moz-border-radius: $a1 $a2 $a3 $a4;
+            border-radius: $a1 $a2 $a3 $a4;
+}
+
+@mixin rotate($deg: 0) {
+    -webkit-transform: rotate($deg + deg);
+       -moz-transform: rotate($deg + deg);
+        -ms-transform: rotate($deg + deg);
+         -o-transform: rotate($deg + deg);
+            transform: rotate($deg + deg);
+}
+
+@mixin transition($time: 1, $value: all) {
+    -webkit-transition: $time + s $value;		 
+       -moz-transition: $time + s $value;
+        -ms-transition: $time + s $value;
+         -o-transition: $time + s $value;
+            transition: $time + s $value;
+}
+
+@mixin transform_translate($x: 0, $y: 0) {
+    -webkit-transform: translate($x, $y);
+       -moz-transform: translate($x, $y);
+        -ms-transform: translate($x, $y);
+         -o-transform: translate($x, $y);
+            transform: translate($x, $y);
+}
+
+@mixin shadow($x: 0px, $y: 0px, $deg: 20px, $size: 0px, $col: #000, $val: false) {
+     @if $val {
+         -webkit-box-shadow: $x $y $deg $size $col $val;
+            -moz-box-shadow: $x $y $deg $size $col $val; 
+                 box-shadow: $x $y $deg $size $col $val;
+     }@else{
+         -webkit-box-shadow: $x $y $deg $size $col;
+            -moz-box-shadow: $x $y $deg $size $col; 
+                 box-shadow: $x $y $deg $size $col;
+     }
+}
+
+@mixin gradient($pos: top, $from: #000, $before: #fff) {
+     $position: 0;
+     @if $pos == left {
+          $position: 1;           
+     }
+     background: -moz-linear-gradient($pos, $from, $before 100%); 
+     background-image: -o-linear-gradient($pos, $from, $before 100%); 
+     background-image: -webkit-linear-gradient($pos, $from, $before 100%); 
+     background-image: -ms-linear-gradient($pos, $from 0%, $before 100%);
+     filter: progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr=$from, endColorstr=$before, GradientType=$position);
+}
+
+@mixin select($val: none) {
+    -webkit-user-select: $val;
+       -moz-user-select: $val;
+        -ms-user-select: $val;
+         -o-user-select: $val;
+            user-select: $val;
+};
+
+@mixin sizing($val: border-box) {
+    -webkit-box-sizing: $val;
+       -moz-box-sizing: $val;
+            box-sizing: $val;
+}
+
+@mixin fonts($size: 18px, $height: 18px, $family: $gothamPro_regular, $weight: normal) {
+     font-family: $family, $font_main;
+     font-size: $size;
+     font-weight: $weight;
+     line-height: $height;
+}
+
+@mixin font-face($name, $file) {
+    $filepath: $file + $name;
+    @font-face {
+        font-family: '#{$name}';
+        src: url($filepath + '.eot');
+        src: url($filepath + '.eot?#iefix') format('embedded-opentype'), 
+             url($filepath + '.woff') format('woff'), 
+             url($filepath + '.ttf')  format('truetype'), 
+             url($filepath + '.svg#' + $name + '') format('svg');
+    }
+}
+
+@mixin background($img, $pos: 0px 0px, $repeat: no-repeat, $size: auto) {
+     $image: $pathIng + $img;
+     background-image: url("#{$image}");
+     background-position: $pos;
+     background-repeat: $repeat;
+     background-size: $size;
+}
+
+@mixin buttSwitching($img, $position, $tim: $tim_butt){
+     @include position(absolute, 0px, 0px, 100%, 100%);
+     content: '';
+     opacity: 0;
+     background: url("#{$img_path}#{$img}") + ' ' + $position + ' ' + no-repeat;
+     @include transition($tim, opacity);
+}
+
+@mixin scale($x, $y: false) {
+     @if $y {
+         -webkit-transform: scale($x, $y);
+            -moz-transform: scale($x, $y);
+             -ms-transform: scale($x, $y);
+              -o-transform: scale($x, $y);
+                 transform: scale($x, $y);
+     }@else{
+         -webkit-transform: scale($x);
+            -moz-transform: scale($x);
+             -ms-transform: scale($x);
+              -o-transform: scale($x);
+                 transform: scale($x);
+     }   
+}
+
+@mixin filter($val) {
+    -webkit-filter: blur($val);
+       -moz-filter: blur($val);
+        -ms-filter: blur($val);
+         -o-filter: blur($val);
+            filter: blur($val);
+}
+
+
+
+@mixin border_horizontal($color: $menu_border) {
+    -webkit-box-shadow: $menu_border_size + $unit 0px 0px 0px $color inset, (-$menu_border_size + $unit) 0px 0px 0px $color inset; 
+       -moz-box-shadow: $menu_border_size + $unit 0px 0px 0px $color inset, (-$menu_border_size + $unit) 0px 0px 0px $color inset;  
+            box-shadow: $menu_border_size + $unit 0px 0px 0px $color inset, (-$menu_border_size + $unit) 0px 0px 0px $color inset;   
+}
+@mixin border_horizontal_left($color: $menu_border) {
+    -webkit-box-shadow: $menu_border_size + $unit 0px 0px 0px $color inset; 
+       -moz-box-shadow: $menu_border_size + $unit 0px 0px 0px $color inset;  
+            box-shadow: $menu_border_size + $unit 0px 0px 0px $color inset;   
+}
+@mixin border_horizontal_right($color: $menu_border) {
+    -webkit-box-shadow: -$menu_border_size + $unit 0px 0px 0px $color inset; 
+       -moz-box-shadow: -$menu_border_size + $unit 0px 0px 0px $color inset;  
+            box-shadow: -$menu_border_size + $unit 0px 0px 0px $color inset;   
+}
+@mixin border_vertical($color: $menu_border) {
+    -webkit-box-shadow: 0px $menu_border_size + $unit 0px 0px $color, 0px (-$menu_border_size + $unit) 0px 0px $color;  
+       -moz-box-shadow: 0px $menu_border_size + $unit 0px 0px $color, 0px (-$menu_border_size + $unit) 0px 0px $color;  
+            box-shadow: 0px $menu_border_size + $unit 0px 0px $color, 0px (-$menu_border_size + $unit) 0px 0px $color;  
+}
+@mixin border_active($color: $color) {
+    -webkit-box-shadow: 0px 0px 0px $menu_border_size + $unit $color inset;   
+       -moz-box-shadow: 0px 0px 0px $menu_border_size + $unit $color inset;  
+            box-shadow: 0px 0px 0px $menu_border_size + $unit $color inset;   
+}
+@mixin border_active_left($color: $color) {
+    -webkit-box-shadow: 0px (-$menu_border_size + $unit) 0px 0px $color inset,
+                        0px $menu_border_size + $unit 0px 0px $color inset,
+                        $menu_border_size + $unit 0px 0px 0px $color inset,
+                        $menu_border_size + $unit 0px 0px 0px $color;
+         
+       -moz-box-shadow: 0px (-$menu_border_size + $unit) 0px 0px $color inset,
+                        0px $menu_border_size + $unit 0px 0px $color inset,
+                        $menu_border_size + $unit 0px 0px 0px $color inset,
+                        $menu_border_size + $unit 0px 0px 0px $color; 
+            
+            box-shadow: 0px (-$menu_border_size + $unit) 0px 0px $color inset,
+                        0px $menu_border_size + $unit 0px 0px $color inset,
+                        $menu_border_size + $unit 0px 0px 0px $color inset,
+                        $menu_border_size + $unit 0px 0px 0px $color;
+}
+
+
+
+
+
+
+
+
+
+

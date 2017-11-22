@@ -1,0 +1,50 @@
+/* .popularCategories ---------------------------------------------------------------*/
+.popularCategories{
+     @include block();
+     min-height: 569px;
+     padding: 103px 0px 70px 0px;
+     @include background('images-fon/popular-categories.jpg', top);
+     background-size: cover;
+}
+
+
+.popCat{
+     @include inline_block(top, center);
+     margin-top: 80px;
+     width: $minPage + $popCat_padding_x;
+     left: -$popCat_padding_x / 2;
+     
+     &-cont {
+          @include inline_block();
+          float: left;
+          width: 33.33%;
+          padding: 0px $popCat_padding_x / 2;
+          
+          &:nth-child(1) &__box{
+               @include background('popular-categories/hooks.png', center 51px);
+          }
+          &:nth-child(2) &__box{
+               @include background('popular-categories/multitul.png', center 65px);
+          }
+          &:nth-child(3) &__box{
+               @include background('popular-categories/oars.png', center 77px);
+          }
+     }
+     &-cont__box {
+          @include block(center);
+          height: 255px;
+          border: 1px solid #e3e6ec;
+     }
+     span {
+          @include inline_block();
+          margin-top: 160px;
+          @include fonts(30px, 44px, $haginCapsMedium_Regular);
+          color: $text_title;
+     }
+}
+
+
+
+
+
+

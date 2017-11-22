@@ -1,0 +1,357 @@
+*{
+     margin:0px; 
+     padding:0px;
+     outline:none;
+    -webkit-appearance: none;
+     @include sizing();
+     @include fonts();
+}
+body{
+     background-color: $fonColor;
+}
+html, body{
+     height:100%; 
+}
+input, textarea, select, button{
+     outline:none; 
+     @include radius();
+}
+form{
+     @include block(); 
+}
+img{
+     border:none; 
+}
+
+/*
+::selection {
+     background-color: $selection_background;
+     color: $selection_color;
+}
+*/
+
+
+
+
+.total-container{
+     @include block(); 
+     min-width: $minPage + $unit;
+     min-height: 100%;
+}
+
+.container{
+     @include block();
+     width: $minPage + $unit;
+     height: 100%;
+     margin: 0px auto;
+     //border: 1px solid red;
+}
+
+.cont-block{
+     @include table();
+}
+.cont-box{
+     @include table_cell();
+}
+
+
+
+nobr{
+     font-family: inherit;
+     color: inherit;
+     font-size: inherit;
+     line-height: inherit;
+}
+
+
+
+/* .counter -------------------------*/
+.counter{
+     @include inline_block();
+     height: 30px;
+     
+     &__more, &__less {
+          @include inline_block();
+          float: left;
+          width: 30px;
+          height: 100%;
+          background-color: #101010;
+          cursor: pointer;
+          @include transition($time, background-color);
+          
+          &:before, &:after {
+               position: absolute;
+               content: '';
+               top: 50%;
+               left: 50%;
+               background-color: #868686;
+          }
+          &:before {
+               width: 2px;
+               height: 10px;
+               margin: -5px 0px 0px -1px;
+          }
+          &:after {
+               width: 10px;
+               height: 2px;
+               margin: -1px 0px 0px -5px;
+          }
+          &:hover {
+               background-color: #333;
+          }
+     }
+     &__less {
+          &:before {
+               display: none;
+          }
+     }
+     
+     &__text {
+          float: left;
+          @include inline_block(middle, center);
+          width: 43px;
+          height: 100%;
+          //padding: 1px 1px 0px 1px;
+          padding: 0px 1px 0px 1px;
+          border: none;
+          background-color: transparent;
+          font-size: 16px;
+          color: $color;
+     }
+}
+
+
+
+/* .button --------------------------*/
+.button{
+     @include inline_block(top, center);
+     border-width: 3px;
+     border-style: solid;
+     font-family: $haginCapsMedium_Regular;
+     text-decoration: none;
+     letter-spacing: 2px;
+     @include transition($time, all);
+}
+
+
+
+/* .sliderButton --------------------*/
+.sliderButton{
+     
+     .slick-prev, .slick-next {
+          position: absolute;
+          width: 55px;
+          height: 55px;
+          top: 50%;
+          margin-top: -27px;
+          border: none;
+          color: transparent;
+          cursor: pointer;
+          background-color: #eaebee;
+          @include transition($time, background-color);
+          
+          &:before {
+               @include position(absolute, 50%, 50%, 13px, 12px);
+               content: '';
+               margin: -5px 0px 0px -6px;
+               @include background('slider-button.svg');
+          }
+     }
+     .slick-prev {
+          left: -127px;
+          &:before {
+               background-position: 0px 0px;
+          }
+          &:hover:before {
+               background-position: 0px -28px;
+          }
+     } 
+     .slick-next {
+          right: -127px;
+          &:before {
+               background-position: -27px 0px;
+          }
+          &:hover:before {
+               background-position: -27px -28px;
+          }
+     }
+}
+
+
+
+/* .content -------------------------------------------------------------------------*/
+.content{
+     @include block();
+    
+     &--catalog {
+         
+         .catalog-global.active { 
+              // min-height: 1500px;
+          
+         }
+     }
+}
+
+
+
+/* .page ----------------------------*/
+.page{
+     @include inline_block();
+     width: 100%;
+     min-height: 64px;
+     margin-top: 23px;
+     border: 2px solid $box_border;
+     background-color: $box_color;
+     
+     &__list {
+          @include block();
+          float: left;
+          margin: 23px 0px 0px 33px;
+          
+          li {
+               @include inline_block();
+
+               &:before {
+                    @include inline_block();
+                    content: '';
+                    width: 6px;
+                    height: 8px;
+                    margin: 6px 7px 0px 3px;
+                    @include background('page-arrow.svg');
+                    background-size: contain;
+               }
+               &:first-child:before {
+                    display: none;
+               }
+          }
+          a, span {
+               @include inline_block();
+               @include fonts(13px, 18px, $haginCapsMedium_Regular);
+               letter-spacing: 1px;
+          }
+          a {
+               color: #686868;
+               text-decoration: none;
+               
+               &:hover {
+                    text-decoration: underline;
+               }
+          } 
+          span {
+               color: #3D3D3D;
+          }
+     }
+} 
+
+
+.page-cont{
+     @include table();
+     margin-top: 23px;
+     z-index: 2;
+     
+     .page{
+          margin-top: 0px;
+          @include table_cell();
+     }
+}
+
+
+
+/* .sorting -------------------------*/
+.sorting{
+     @include position(absolute, auto, 0px, auto, 100%);
+     right: 0px;
+     
+     &__title {
+          @include inline_block();
+          height: inherit;
+          padding: 25px 22px 0px 22px;
+          @include fonts(12px, 14px, $haginCapsMedium_Regular);
+          color: #575757;
+          border-left: 2px solid $box_border;
+     }
+     &__list {
+          @include inline_block();
+          height: inherit;
+          border-left: 2px solid $box_border;
+     }
+}
+
+
+
+/* .banner --------------------------*/
+.banner{
+     @include block();
+     height: 220px;
+     padding: 20px;
+     margin: 50px 0px 12px 0px;
+     border: 10px solid #ddd8cf;
+     background-color: #473c28;
+     overflow: hidden;
+     @include transition($timeCatalog, all);
+     
+     
+     &.banner--indentation {
+          margin-bottom: 40px;
+     }
+     &__text {
+          @include block(center);
+          width: 260px;
+          margin: 27px 0px 0px 66px;
+          
+          span {
+               @include block(center);
+               @include fonts(37px, 39px, $haginCapsMedium_Regular);
+               color: $color;
+          }
+          a {
+               @include inline_block();
+               margin-top: 6px;
+               @include fonts(14px, 25px, $gothamPro_medium);
+               color: $color;
+               
+               &:hover {
+                    text-decoration: none;
+               }
+          }
+     }
+     &__img {
+          position: absolute;
+          top: 0px;
+          left: 0px;
+          width: auto;
+          height: auto;
+          max-height: none;
+          max-width: none;
+          min-height: 100%;
+          min-width: 100%;
+     }
+}
+
+
+
+/* .input-radio ---------------------*/
+.input-radio {
+     @include position(absolute, 0px, 0px, 19px, 19px);
+     @include radius(100%);
+     padding: 2px 0px 0px 2px;
+     background-color: #f7f7f7;
+     border: 2px solid #e3e4e6;
+     cursor: pointer;
+     
+     &:before {
+          @include inline_block();
+          @include radius(100%);
+          content: '';
+          width: 11px;
+          height: 11px;
+          background-color: #f7f7f7;
+     }
+     &.createRadio-checked {
+          background-color: $button_border_color;
+          border-color: $button_border_color;
+     }
+}
+
+
+

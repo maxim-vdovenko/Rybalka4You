@@ -1,0 +1,383 @@
+/* 1180px ---------------------------------------------------------------------------*/
+.total-container, .footer{
+     min-width: inherit;
+}
+
+.header{ 
+     min-height: inherit;
+     height: 50px;
+     z-index:10;
+     
+     .cont-block{
+          display: none;
+     }
+} 
+
+.container{
+     width: auto;
+     padding-left: $paddingPage;
+     padding-right: $paddingPage;
+}
+
+.menu{
+    
+     .container{
+          padding-left: 0px;
+          padding-right: 0px;
+     } 
+} 
+
+.entireWidth-box{
+     
+     .container{
+          padding-left: 20px;
+          padding-right: 20px;
+     }
+}
+
+.popCat{
+     width: 100%;
+     left: 0px;
+}
+
+
+
+/* .logo ----------------------------*/ 
+.logo{
+     @include inline_block();
+     height: auto;
+     padding-top: 5px;
+     
+     a {
+          @include inline_block();
+          height: auto;
+          padding: 0px!important;
+     }
+     img {
+          // width: 100px;
+     }
+}
+
+
+
+/* .search --------------------------*/ 
+.search{
+     height: 36px;
+     border: none!important;
+     z-index: 5;
+     
+     &__title {
+          @include block();
+          height: 100%!important;
+          padding-left: $paddingPage;
+          padding-right: $paddingPage;
+  
+          input {
+               position: relative;
+               display: block;
+               width: inherit;
+               border: 2px solid $menu_border;
+               padding: 4px 20px 0px 66px;
+               font-size: 12px;
+               @include background('search.svg', 27px 10px);
+          }  
+     }
+     
+     &__cont{
+          top: 34px;
+          width: 100%;
+     }
+}
+
+
+.cart{
+     @include inline_block();
+     float: right;
+     min-width: 160px;
+     height: 100%;
+     
+     &__title {
+          padding-top: 18px;
+          height: 100%!important;
+
+          b {
+               @include inline_block();
+               top: -2px;
+               right: auto;
+               margin-left: 15px;
+          }
+     }
+     &__cont {
+          top: 48px!important;
+     }
+}
+
+
+
+
+
+.bigHeader{
+     
+     .search{
+          //margin-top: 2px;
+          
+          &__title {
+               
+               input {
+                    padding: 4px 20px 0px 66px;
+                    border: 2px solid $menu_border_bright;
+                    @include background('search.svg', 27px 10px);
+               }  
+          }
+          &__cont{
+               top: 32px;
+               width: 100%;
+          }
+     }
+     .cart{
+          top: 0px;
+          height: 38px;
+     }
+    
+     &-cont {
+          @include block(center);
+          height: auto;
+
+          .textTitle {
+               margin: 180px 0px 120px 0px;
+          }
+          .popUp-informing {
+               margin: 160px 0px 60px 0px;
+          }
+          .form-informing {
+               margin: 260px 0px 160px 0px;
+          }
+          .error-info{
+               margin: 420px 0px 160px 0px;
+          }
+     } 
+     
+     .menuBox__cont:nth-child(2){
+          @include border_horizontal_right($menu_border_bright);
+     }
+     
+     .menu {
+          top: 10px;
+     }
+}
+
+.menuBox__cont{
+     height: auto!important;
+} 
+.menuBox__cont:nth-child(1){
+     display: none;
+}
+.menuBox__cont:nth-child(2){
+     width: auto;
+     text-align: center;
+    -webkit-box-shadow: none!important;
+       -moz-box-shadow: none!important;
+            box-shadow: none!important;
+}
+.menuBox__cont:nth-child(3){
+     display: none;
+}
+.menuBox__cont:nth-child(4){
+     display: none;
+}
+.menuBox__cont:nth-child(5){
+     display: none;
+}
+
+
+
+.menuBox{
+     height: auto!important;
+     z-index: 4;
+    -webkit-box-shadow: none!important;
+       -moz-box-shadow: none!important;
+            box-shadow: none!important;
+     
+}
+.menuHome__title{
+     z-index: 3;
+}
+.menuHome__cont{
+     z-index: 2;
+}
+
+
+.menuUpper{
+     display: inline-block;
+     height: auto!important;
+     margin-top: 4px;
+}
+.menuUpper ul li {
+     height: auto!important;
+}
+.menuUpper ul li span,
+.menuUpper ul li a{
+     
+     height: auto!important;
+     padding-bottom: 5px;
+     
+     &:before {
+          display: none;
+          
+     }
+} 
+.menuUpper-cont{
+     z-index: 2;
+     top: auto!important;
+     //border: 2px solid red;
+}
+
+
+
+
+/* .user ----------------------------*/ 
+.user{
+     @include inline_block();
+     float: right;
+     height: 100%;
+     width: 50px; 
+     
+     &__cont {
+          top: 48px;
+     }
+}
+
+
+
+/* .cabinet -------------------------*/ 
+.cabinetTable{
+     
+     td {
+          padding-left: 5px;
+          padding-right: 5px;
+     }
+     .name-cab {
+          width: auto;
+          padding-left: 10px;
+     }
+}
+
+
+.cab-brandName, .cab-name{
+     @include block();
+     
+     span {
+          width: 100%;
+          padding: 0px;
+          
+     }
+}
+
+
+
+/* .menuHome ------------------------*/ 
+.menuHome{
+     @include inline_block();
+     float: right;
+     height: 100%;
+     width: 50px; 
+     
+     &__title {
+          padding-top: 18px;
+     }
+     &__cont {
+          top: 48px;
+          right: 0px;
+          left: auto;
+     }
+}
+
+
+
+/* .product -------------------------*/
+.product{
+     
+     &__img {
+          width: 40%;
+     }
+     &__data {
+          width: 60%;
+          padding-left: 30px;
+     }
+     
+     &__data-order {
+          margin-bottom: 10px;
+     }
+     .dataButt-box {
+          @include block();
+          margin-top: 10px;
+          text-align: center!important;
+          width: auto;
+          padding: 0px!important;     
+          
+          .goCart-butt {
+               width: 100%;
+               max-width: 300px;
+          }
+          .goComparison-butt {
+               width: 100%;
+               max-width: 300px;
+          }
+     }
+}
+
+
+
+/* .delivery ------------------------*/
+.delivery{
+     margin-top: 20px; 
+     
+     &Box {
+ 
+          span {
+               width: 180px;
+               height: 180px;
+               padding: 140px 10px 0px 10px;
+               @include fonts(12px, 18px, $haginCapsMedium_Regular);
+          }
+     }
+}
+
+
+
+/* .payment -------------------------*/
+.payment{
+     margin-top: 20px; 
+
+     &Box {
+
+          .createRadio, span {
+               width: 180px;
+               height: 180px;
+               padding: 140px 10px 0px 10px;
+               @include fonts(12px, 18px, $haginCapsMedium_Regular);
+          }
+
+     }
+}
+
+
+
+/* .paymentCard ---------------------*/
+.paymentCard{
+     margin-top: 20px;
+}
+
+
+
+/* .delivery-post -------------------*/
+.delivery-post {
+     
+     span {
+          margin: 0px 95px 0px 0px;
+     }
+}
+
+
+
+

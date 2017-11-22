@@ -1,0 +1,47 @@
+/* .slider-band ---------------------------------------------------------------------*/
+.slider-band{
+     @include block();
+     background-color: #f6f7f9;
+     overflow: hidden;
+}
+
+.band-slider{
+     @include block();
+     height: $band_slider_height;
+     @include transition($time, opacity);
+     opacity: 0;
+     
+     &__box {
+          @include block();
+
+          span {
+               @include table_cell(middle, center);
+               width: inherit;
+               height: $band_slider_height;
+          }
+          a {
+               position: relative!important;
+               display: inline-block!important;
+               vertical-align: top!important;
+               max-width: 100%;
+          }
+          img {
+               position: relative!important;
+               display: inline-block!important;
+               vertical-align: top!important;
+               max-width: 100%;
+          }
+     }
+     
+     @extend .sliderButton;
+
+     .slick-dots {
+          display: none;
+     }
+}
+
+
+
+
+
+
